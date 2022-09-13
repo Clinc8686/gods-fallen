@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         moveDirection = value.Get<Vector2>();
-        Debug.Log(moveDirection.x);
+        //Debug.Log(moveDirection.x);
 
         if (moveDirection.x < 0)
         {

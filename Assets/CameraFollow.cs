@@ -12,8 +12,11 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetPos = target.position;
-        Vector3 newPos = new Vector3(targetPos.x, targetPos.y + yOffset, -10f);
-        transform.position = Vector3.Slerp(transform.position, newPos, followSpeed * Time.deltaTime);
+        if (target != null) //von Mario & Spieler zur Kamera hinzugefgt im Inspector
+        {
+            Vector3 targetPos = target.position;
+            Vector3 newPos = new Vector3(targetPos.x, targetPos.y + yOffset, -10f);
+            transform.position = Vector3.Slerp(transform.position, newPos, followSpeed * Time.deltaTime);
+        }
     }
 }
