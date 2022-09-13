@@ -1,29 +1,28 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Border : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Background")
+        if (collision.gameObject.tag == "Player")
         {
-            //Debug.Log("enter");
+            Debug.Log("player enter");
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Background")
+        if (collision.gameObject.tag == "Player")
         {
-            //Debug.Log("stay");
+            Debug.Log("player stay");
         }
     }
 
     private void OnCollisionExit(Collision other)
     {
         //Destroy(this.gameObject);
-        //Debug.Log("verloren!");
+        Debug.Log("player verloren!");
     }
 }
