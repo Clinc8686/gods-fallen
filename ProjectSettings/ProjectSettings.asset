@@ -705,11 +705,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 2
-  cloudProjectId: 
+  cloudProjectId: 98aaedcd-6d3e-455d-be2c-2a802feb2a0d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: gods-fallen
+  organizationId: clinc8686
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
