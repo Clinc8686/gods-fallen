@@ -11,7 +11,6 @@ public class PlayerJump : MonoBehaviour
     
     private void OnJump(InputValue value)
     {
-        Debug.Log("OnJump");
         if (value.isPressed && grounded && (countJump < 2))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);

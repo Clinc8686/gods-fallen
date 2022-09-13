@@ -4,25 +4,12 @@ using UnityEngine;
 
 public class Border : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionExit2D(Collision2D other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            Debug.Log("player enter");
+            Destroy(other.gameObject);
+            Debug.Log("player hat verloren!");
         }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("player stay");
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        //Destroy(this.gameObject);
-        Debug.Log("player verloren!");
     }
 }

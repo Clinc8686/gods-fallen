@@ -13,6 +13,16 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         moveDirection = value.Get<Vector2>();
+        Debug.Log(moveDirection.x);
+
+        if (moveDirection.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0,-180,0);
+        }
+        else if(moveDirection.x > 0) 
+        {
+            transform.rotation = Quaternion.Euler(0,0,0);
+        }
     }
 
     private void Update()
