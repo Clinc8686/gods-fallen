@@ -1,58 +1,64 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private float attackMoveSpeed = 100;
-    private bool attack = false;
-    private float attackRotGrad = 0;
-    private int attackRotFaktor = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float upMoveSpeed = 100;
+    [SerializeField] private float downMoveSpeed = 200;
+    [SerializeField] private Transform weaponHolder;
+    [SerializeField] private float waitingTime = 1;
+    private float grad;
+    private int faktor = 1;
+    private float timeBtwAttack;
 
+    private bool downDir = false;
     // Update is called once per frame
     void Update()
     {
-        
+        if (downDir)
+        {
+            grad += faktor * downMoveSpeed * Time.deltaTime;
+            grad = Mathf.Clamp(grad, -10, 25);
+            DownWeapon();
+        }
+        else
+        {
+            grad += faktor * upMoveSpeed * Time.deltaTime;
+            grad = Mathf.Clamp(grad, -10, 25);
+            UpWeapon();
+        }
+
+        timeBtwAttack -= Time.deltaTime;
     }
     
     
     private void OnAttack(InputValue value)
     {
-        Debug.Log("OnAttack, " + transform.rotation);
-        if (value.isPressed)
+        if (timeBtwAttack <= 0 && !downDir && value.isPressed)
         {
-            Debug.Log("OnClick");
+            downDir = true;
+            faktor = -1;
         }
-        else
+        else if(downDir)
         {
-            Debug.Log("Off");
-        }
-    }
-    
-    private void RotateWeapon()
-    {
-        Transform weapon = transform.GetChild(0);
-        Debug.Log(attackRotGrad);
-
-        if (attackRotGrad == 22)
-        {
-            attack = false;
+            timeBtwAttack = waitingTime;
+            downDir = false;
+            faktor = 1;
         }
         
-        if (attackRotGrad == -10)
-        {
-            attackRotFaktor = -1;
-        }
-            
-        attackRotGrad += attackRotFaktor * Time.deltaTime * attackMoveSpeed;
-        attackRotGrad = Mathf.Clamp(attackRotGrad, -10, 22);
-            
-        weapon.rotation = Quaternion.Euler(0,0,attackRotGrad);
+    }
+
+    private void DownWeapon()
+    {
+        weaponHolder.rotation = Quaternion.Euler(0,transform.localEulerAngles.y,grad);
+    }
+
+    private void UpWeapon()
+    {
+        weaponHolder.rotation = Quaternion.Euler(0,transform.localEulerAngles.y,grad);
     }
 }
