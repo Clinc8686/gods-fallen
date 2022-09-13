@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: LavaUpperBlockleft
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: bfe49d937bb3c7747be523db1c5f94fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52a7fca3ef5a62f4cba3a01c7d9ca03a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
