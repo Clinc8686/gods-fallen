@@ -485,7 +485,6 @@ GameObject:
   - component: {fileID: 7490775764870588131}
   - component: {fileID: 482479196798604371}
   - component: {fileID: 3684926355940901894}
-  - component: {fileID: 6022272428105903664}
   - component: {fileID: 1805372217586199140}
   - component: {fileID: 4325973160980924468}
   - component: {fileID: 8510912724312757290}
@@ -611,32 +610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!61 &6022272428105903664
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2689725653696329556}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2}
-  m_EdgeRadius: 0
 --- !u!50 &1805372217586199140
 Rigidbody2D:
   serializedVersion: 4
@@ -688,7 +661,10 @@ MonoBehaviour:
   upMoveSpeed: 100
   downMoveSpeed: 300
   weaponHolder: {fileID: 7835550923051301234}
-  waitingTime: 0.8
+  attackRate: 2
+  shootObject: {fileID: 0}
+  spawnLocation: {fileID: 0}
+  shootTimer: 3
 --- !u!70 &6124242144782334603
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
