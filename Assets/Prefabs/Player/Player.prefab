@@ -182,7 +182,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 8510912724312757290}
   - component: {fileID: 6124242144782334603}
   - component: {fileID: 6004936568609428696}
+  - component: {fileID: 4852121846930075716}
   m_Layer: 0
   m_Name: Playerfigur
   m_TagString: Player
@@ -692,7 +693,7 @@ Animator:
   m_GameObject: {fileID: 2689725653696329556}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 803a4268e738f68418438c7595d6f7b7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 18190b34ac4555f499e0391279aed81a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -702,6 +703,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4852121846930075716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689725653696329556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cb80c73d4690747b8a424e8140f742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leere: {fileID: 0}
+  hell: {fileID: 0}
+  earth: {fileID: 0}
+  sky: {fileID: 0}
+  player: {fileID: 2689725653696329556}
+  red: {fileID: 9100000, guid: 18190b34ac4555f499e0391279aed81a, type: 2}
+  green: {fileID: 9100000, guid: 612ee273181233c45ba3fffb660903bf, type: 2}
+  blue: {fileID: 9100000, guid: 15c8814b2cba22645bf482f9d4199c0e, type: 2}
 --- !u!1 &3175307167425590629
 GameObject:
   m_ObjectHideFlags: 0

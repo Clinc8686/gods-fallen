@@ -48,9 +48,7 @@ public class GameManager : MonoBehaviour
     {
         SpriteRenderer sr = sky.GetComponent<SpriteRenderer>();
         float skyHeightForPlayer = 2 * (sr.bounds.extents.y / 3);
-        //float playerSpawnHeight = sr.bounds.center.y + skyHeightForPlayer; tmp
-        float playerSpawnHeight = 30;   //tmp
+        float playerSpawnHeight = sr.bounds.center.y + skyHeightForPlayer;
         player.transform.position = new Vector3(sr.bounds.center.x, playerSpawnHeight, 0);
-        //player.transform.position = new Vector3()
     }
 }
