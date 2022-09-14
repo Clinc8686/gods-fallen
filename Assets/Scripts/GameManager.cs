@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject sky;
+
+    //Finish
+    public void CompleteLevel()
+    {
+        Debug.Log("Level WoW!");
+    }
     void Start()
     {
         playGroundEnabled = false;
