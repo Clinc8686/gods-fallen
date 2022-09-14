@@ -11,13 +11,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float downMoveSpeed = 200;
     [SerializeField] private Transform weaponHolder;
     [SerializeField] private float attackRate = 2f; //per Sek
-    [SerializeField] private GameObject shootObject;
-    [SerializeField] private Transform spawnLocation;
+    [SerializeField] private ParticleSystem shootObject;
     [SerializeField] private float shootTimer = 3;
+    [SerializeField] private float maxMultipleShoots = 5f;
     private float grad;
     private int faktor = 1;
     private float timeBtwAttack;
     private float shootDelay;
+    private float maxMultShoots;
 
     private bool downDir = false;
     // Update is called once per frame
@@ -28,7 +29,16 @@ public class PlayerAttack : MonoBehaviour
             grad += faktor * downMoveSpeed * Time.deltaTime;
             grad = Mathf.Clamp(grad, -10, 25);
             DownWeapon();
-            FollowShoot();
+
+            if (shootDelay <= 0)
+            {
+                FollowShoot();
+            }
+
+            if (maxMultShoots <= 0)
+            {
+                EndDownWeapon();
+            }
         }
         else
         {
@@ -36,8 +46,9 @@ public class PlayerAttack : MonoBehaviour
             grad = Mathf.Clamp(grad, -10, 25);
             UpWeapon();
         }
-        
-        //timeBtwAttack -= Time.deltaTime;
+
+        maxMultShoots -= Time.deltaTime;
+        shootDelay -= Time.deltaTime;
     }
     
     
@@ -48,7 +59,9 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("Attack");
             downDir = true;
             faktor = -1;
-            Instantiate(shootObject, spawnLocation.position, Quaternion.identity);
+            maxMultShoots = maxMultipleShoots;
+            shootDelay = shootTimer;
+            shootObject.Play();
         }
         else if(downDir)
         {
@@ -72,11 +85,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void FollowShoot()
     {
-        if (Time.time >= shootDelay && downDir)
-        {
-            Instantiate(shootObject, spawnLocation.position, Quaternion.identity);
-            shootDelay = Time.time + shootTimer;
-        }
+        shootObject.Play();
+        shootDelay = shootTimer;
     }
 
     private void EndDownWeapon()
