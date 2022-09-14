@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,5 +35,11 @@ public class PlayerJump : MonoBehaviour
         {
             grounded = false;
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collisionInfo)
+    {
+        Debug.Log(collisionInfo.collider.name + "  " + collisionInfo.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>()) + "  " + bottomCollider.GetComponent<CapsuleCollider2D>().name);
+ 
     }
 }
