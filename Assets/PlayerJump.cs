@@ -56,7 +56,7 @@ public class PlayerJump : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.collider.name == "Tilemap" && other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>())) //Mario
+        if ((other.collider.name == "Bottom" || other.collider.name == "PlayGround") && other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>())) //Mario
         {
             grounded = true;
             countJump = 0;
