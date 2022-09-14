@@ -10,10 +10,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float upMoveSpeed = 100;
     [SerializeField] private float downMoveSpeed = 200;
     [SerializeField] private Transform weaponHolder;
-    [SerializeField] private float waitingTime = 1;
+    [SerializeField] private float attackRate = 2f; //per Sek
+    [SerializeField] private GameObject shootObject;
+    [SerializeField] private Transform spawnLocation;
+    [SerializeField] private float shootTimer = 3;
     private float grad;
     private int faktor = 1;
     private float timeBtwAttack;
+    private float delay;
 
     private bool downDir = false;
     // Update is called once per frame
@@ -32,20 +36,22 @@ public class PlayerAttack : MonoBehaviour
             UpWeapon();
         }
 
-        timeBtwAttack -= Time.deltaTime;
+        //timeBtwAttack -= Time.deltaTime;
     }
     
     
     private void OnAttack(InputValue value)
     {
-        if (timeBtwAttack <= 0 && !downDir && value.isPressed)
+        if (Time.time >= timeBtwAttack && !downDir && value.isPressed)
         {
+            Debug.Log("Attack");
             downDir = true;
             faktor = -1;
+            LaunchShoot();
         }
         else if(downDir)
         {
-            timeBtwAttack = waitingTime;
+            timeBtwAttack = Time.time + 1f / attackRate;  
             downDir = false;
             faktor = 1;
         }
@@ -61,4 +67,14 @@ public class PlayerAttack : MonoBehaviour
     {
         weaponHolder.rotation = Quaternion.Euler(0,transform.localEulerAngles.y,grad);
     }
+
+    private void LaunchShoot()
+    {
+        while (downDir && shootTimer <= 0)
+        {
+            Instantiate(shootObject, spawnLocation.position, Quaternion.identity);
+            delay = shootTimer;
+        }
+    }
+    
 }
