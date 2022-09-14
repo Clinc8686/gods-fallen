@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject playGround;
     [SerializeField] private GameObject bottomCollider;
-    private bool playGroundEnabled;
+    private bool _playGroundEnabled;
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject sky;
@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        playGroundEnabled = false;
-        changePlayGround();
+        _playGroundEnabled = false;
+        ChangePlayGround();
         spawnPlayerOnTop();
     }
     
@@ -33,15 +33,15 @@ public class GameManager : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (IsGrounded() && playGroundEnabled == false) {
-            playGroundEnabled = true;
-            changePlayGround();
+        if (IsGrounded() && _playGroundEnabled == false) {
+            _playGroundEnabled = true;
+            ChangePlayGround();
         }
     }
 
-    private void changePlayGround()
+    private void ChangePlayGround()
     {
-        if (playGroundEnabled)
+        if (_playGroundEnabled)
         {
             playGround.SetActive(true);
         }
