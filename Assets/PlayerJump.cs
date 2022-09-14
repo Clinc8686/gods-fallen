@@ -23,7 +23,6 @@ public class PlayerJump : MonoBehaviour
     {
         if (value.isPressed && (countJump < 2))
         {
-            Debug.Log(countJump);
             //gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);
             rb.velocity = new Vector2(rb.velocity.x, jumpHigh);
             countJump++;
