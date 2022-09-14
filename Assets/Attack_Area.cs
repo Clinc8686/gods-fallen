@@ -6,7 +6,6 @@ using UnityEngine;
 public class Attack_Area : MonoBehaviour
 {
 
-    public bool isRange;
    
     // Start is called before the first frame update
     void Start()
@@ -21,7 +20,7 @@ public class Attack_Area : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Playerfigur")
         {
             gameObject.GetComponent<AIPath>().canMove = true;
         }
@@ -30,7 +29,7 @@ public class Attack_Area : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Playerfigur")
         {
             gameObject.GetComponent<AIPath>().canMove = false;
         }
