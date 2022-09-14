@@ -15,7 +15,8 @@ public class PlayerJump : MonoBehaviour
     {
         if (value.isPressed && grounded && (countJump < 2))
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);
+            //gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHigh);
             countJump++;
         }
     }
@@ -37,9 +38,12 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collisionInfo)
+    private void OnCollisionStay2D(Collision2D other)
     {
-        Debug.Log(collisionInfo.collider.name + "  " + collisionInfo.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>()) + "  " + bottomCollider.GetComponent<CapsuleCollider2D>().name);
- 
+        if (other.collider.name == "Tilemap" && other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>())) //Mario
+        {
+            grounded = true;
+            countJump = 0;
+        } 
     }
 }
