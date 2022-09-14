@@ -1288,7 +1288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5891165137015664263, guid: fdf09e906b573c247a66abc6cc1368cb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdf09e906b573c247a66abc6cc1368cb, type: 3}
@@ -2828,7 +2828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3104896604761435023, guid: 4829f40f761eceb459bd88d4b8187d43, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.95
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3104896604761435023, guid: 4829f40f761eceb459bd88d4b8187d43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3008,7 +3008,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10225,6 +10225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomCollider: {fileID: 658273786}
   jumpHigh: 10
+  fallGravity: 2
 --- !u!50 &1754711130
 Rigidbody2D:
   serializedVersion: 4
