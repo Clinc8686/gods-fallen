@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     private float grad;
     private int faktor = 1;
     private float timeBtwAttack;
-    private float delay;
+    private float shootDelay;
 
     private bool downDir = false;
     // Update is called once per frame
@@ -28,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
             grad += faktor * downMoveSpeed * Time.deltaTime;
             grad = Mathf.Clamp(grad, -10, 25);
             DownWeapon();
+            FollowShoot();
         }
         else
         {
@@ -35,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
             grad = Mathf.Clamp(grad, -10, 25);
             UpWeapon();
         }
-
+        
         //timeBtwAttack -= Time.deltaTime;
     }
     
@@ -47,10 +48,11 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("Attack");
             downDir = true;
             faktor = -1;
-            LaunchShoot();
+            Instantiate(shootObject, spawnLocation.position, Quaternion.identity);
         }
         else if(downDir)
         {
+            Debug.Log("Released");
             timeBtwAttack = Time.time + 1f / attackRate;  
             downDir = false;
             faktor = 1;
@@ -68,13 +70,22 @@ public class PlayerAttack : MonoBehaviour
         weaponHolder.rotation = Quaternion.Euler(0,transform.localEulerAngles.y,grad);
     }
 
-    private void LaunchShoot()
+    private void FollowShoot()
     {
-        while (downDir && shootTimer <= 0)
+        if (Time.time >= shootDelay && downDir)
         {
             Instantiate(shootObject, spawnLocation.position, Quaternion.identity);
-            delay = shootTimer;
+            shootDelay = Time.time + shootTimer;
         }
     }
+
+    private void EndDownWeapon()
+    {
+        timeBtwAttack = Time.time + 1f / attackRate;  
+        downDir = false;
+        faktor = 1;
+    }
+
+    
     
 }
