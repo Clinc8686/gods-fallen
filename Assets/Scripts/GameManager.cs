@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         changePlayGround();
 
         spawnPlayerOnTop();
-        
+
         playGroundEnabled = true;
         changePlayGround();
     }
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         float playerSpawnHeight = sr.bounds.center.y + skyHeightForPlayer;
 
         player.transform.position = new Vector3(sr.bounds.center.x, playerSpawnHeight, 0);
+        Debug.Log(player.transform.position.x + " " + player.transform.position.y + " " + player.transform.position.z);
         //player.transform.position = new Vector3()
     }
 }
