@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     private float grad;
     private int faktor = 1;
     private float timeBtwAttack;
+    private float delay;
 
     private bool downDir = false;
     // Update is called once per frame
