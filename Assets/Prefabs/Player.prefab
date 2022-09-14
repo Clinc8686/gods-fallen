@@ -671,7 +671,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottomCollider: {fileID: 3175307167425590629}
-  jumpHigh: 10
+  jumpHigh: 8
+  fallGravity: 2
 --- !u!114 &8510912724312757290
 MonoBehaviour:
   m_ObjectHideFlags: 0

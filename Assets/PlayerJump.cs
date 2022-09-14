@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,16 +9,31 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] private GameObject bottomCollider;
     [SerializeField] private float jumpHigh = 2;
+    [SerializeField] private float fallGravity = 2;
     private bool grounded = false;
     private int countJump = 0;
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void OnJump(InputValue value)
     {
         if (value.isPressed && grounded && (countJump < 2))
         {
             //gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHigh);
+            rb.velocity = new Vector2(rb.velocity.x, jumpHigh);
             countJump++;
+        }
+    }
+
+    void Update()
+    {
+        if (rb.velocity.y < 0f)
+        {
+            rb.velocity -= new Vector2(0f, -Physics2D.gravity.y) * (Time.deltaTime * fallGravity);
         }
     }
     
