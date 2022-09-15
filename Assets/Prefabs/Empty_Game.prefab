@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4540904415407852433, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
+      propertyPath: backgroundLayer.m_Bits
+      value: 1048576
+      objectReference: {fileID: 0}
     - target: {fileID: 4852121846930075716, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
       propertyPath: sky
       value: 
@@ -1290,6 +1294,14 @@ PrefabInstance:
     - target: {fileID: 3522437647134923770, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[121].X
       value: -150000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399731550849069173, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399731550849069173, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4668953973045497808, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].x
