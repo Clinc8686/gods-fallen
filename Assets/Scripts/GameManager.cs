@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         ChangePlayGround(false);
         spawnPlayerOnTop();
-        setSpeechBubbleText("Es war ein mal vor langer, langer Zeit...blablabla");
+        setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
         showSpeechBubble(true);
     }
     
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void setSpeechBubbleText(String text)
     {
-        TextMeshPro speechBubbleText = speechBubble.GetComponentInChildren<TextMeshPro>();
+        TextMeshProUGUI speechBubbleText = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
         speechBubbleText.text = text;
     }
     
