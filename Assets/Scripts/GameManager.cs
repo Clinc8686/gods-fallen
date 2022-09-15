@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject bottomCollider;
     private bool _playGroundEnabled;
 
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerFigur;
     [SerializeField] private GameObject sky;
     
     public LayerMask groundLayer;
@@ -56,11 +56,11 @@ public class GameManager : MonoBehaviour
         SpriteRenderer sr = sky.GetComponent<SpriteRenderer>();
         float skyHeightForPlayer = 2 * (sr.bounds.extents.y / 3);
         float playerSpawnHeight = sr.bounds.center.y + skyHeightForPlayer;
-        player.transform.position = new Vector3(sr.bounds.center.x, playerSpawnHeight, 0);
+        playerFigur.transform.position = new Vector3(sr.bounds.center.x, playerSpawnHeight, 0);
     }
     
     bool IsGrounded() {
-        Vector2 position = player.transform.position;
+        Vector2 position = playerFigur.transform.position;
         Vector2 direction = Vector2.down;
         float distance = 2.0f;
     
