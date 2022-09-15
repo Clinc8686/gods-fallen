@@ -13,9 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject playerFigur;
     [SerializeField] private GameObject sky;
-    
     [SerializeField] private GameObject speechBubble;
-
     public LayerMask groundLayer;
 
     //Finish
@@ -26,10 +24,10 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        ChangePlayGround(false);
         spawnPlayerOnTop();
         setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
         showSpeechBubble(true);
+        ChangePlayGround(false);
     }
     
     void Update()
