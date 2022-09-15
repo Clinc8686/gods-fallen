@@ -32747,6 +32747,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3104896604761435023, guid: 166419ab9f5a9d249b5e24e773f18f7c, type: 3}
   m_PrefabInstance: {fileID: 113065266}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &991750261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991750264}
+  - component: {fileID: 991750263}
+  - component: {fileID: 991750262}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &991750262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991750261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &991750263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991750261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &991750264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991750261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1027876614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3104896604761435023, guid: 4829f40f761eceb459bd88d4b8187d43, type: 3}
@@ -34743,6 +34811,26 @@ PrefabInstance:
     - target: {fileID: 5366143225138472829, guid: fafd6e71acdf0a746870ec59ed590400, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679842554104518141, guid: fafd6e71acdf0a746870ec59ed590400, type: 3}
+      propertyPath: m_text
+      value: 0 Sec
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679842554104518141, guid: fafd6e71acdf0a746870ec59ed590400, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679842554104518141, guid: fafd6e71acdf0a746870ec59ed590400, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.5764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679842554104518141, guid: fafd6e71acdf0a746870ec59ed590400, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679842554104518141, guid: fafd6e71acdf0a746870ec59ed590400, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278227967
       objectReference: {fileID: 0}
     - target: {fileID: 6692105018159597340, guid: fafd6e71acdf0a746870ec59ed590400, type: 3}
       propertyPath: m_Name
