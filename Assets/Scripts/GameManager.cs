@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject sky;
     [SerializeField] private GameObject speechBubble;
     public LayerMask groundLayer;
+    private GameObject[] enemies;
 
     //Finish
     public void CompleteLevel()
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
         spawnPlayerOnTop();
         setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
         showSpeechBubble(true);
@@ -52,8 +54,6 @@ public class GameManager : MonoBehaviour
 
     private void showEnemies(bool status)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
- 
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].SetActive(status);
