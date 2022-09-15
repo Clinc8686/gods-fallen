@@ -357,7 +357,7 @@ MonoBehaviour:
   speechBubble: {fileID: 8401767755462119410}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 524288
+    m_Bits: 64
 --- !u!114 &6804483217931373449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +662,10 @@ PrefabInstance:
     - target: {fileID: 2166351872974701386, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_Name
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192536033471563032, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
+      propertyPath: m_TagString
+      value: Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 3522437647134923770, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_ColliderPaths.Array.size
