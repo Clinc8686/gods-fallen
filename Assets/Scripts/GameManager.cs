@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         if (IsGrounded() && _playGroundEnabled == false) {
             showPlayGround(true);
             showSpeechBubble(false);
+            showEnemies(true);
         }
     }
 
