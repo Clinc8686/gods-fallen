@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject speechBubble;
     public LayerMask groundLayer;
     private GameObject[] enemies;
+    public static bool isBeginning = true;
 
     //Finish
     public void CompleteLevel()
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
             showPlayGround(true);
             showSpeechBubble(false);
             showEnemies(true);
+            isBeginning = false;
         }
     }
 
