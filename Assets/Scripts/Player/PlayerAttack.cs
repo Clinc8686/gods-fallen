@@ -12,8 +12,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform weaponHolder;
     [SerializeField] private float attackRate = 2f; //per Sek
     [SerializeField] private ParticleSystem shootObject;
-    [SerializeField] private float shootTimer = 3;
-    [SerializeField] private float maxMultipleShoots = 5f;
+    [SerializeField] private float timeBtwShoot = 2;
+    [SerializeField] private float maxShootTime = 5f;
     private float grad;
     private int faktor = 1;
     private float timeBtwAttack;
@@ -24,10 +24,11 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        grad += faktor * upMoveSpeed * Time.deltaTime;
+        grad = Mathf.Clamp(grad, -25, 0);
+        
         if (downDir)
         {
-            grad += faktor * downMoveSpeed * Time.deltaTime;
-            grad = Mathf.Clamp(grad, -10, 25);
             DownWeapon();
 
             if (shootDelay <= 0)
@@ -42,8 +43,6 @@ public class PlayerAttack : MonoBehaviour
         }
         else
         {
-            grad += faktor * upMoveSpeed * Time.deltaTime;
-            grad = Mathf.Clamp(grad, -10, 25);
             UpWeapon();
         }
 
@@ -56,16 +55,14 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Time.time >= timeBtwAttack && !downDir && value.isPressed)
         {
-            Debug.Log("Attack");
             downDir = true;
             faktor = -1;
-            maxMultShoots = maxMultipleShoots;
-            shootDelay = shootTimer;
+            maxMultShoots = maxShootTime;
+            shootDelay = timeBtwShoot;
             shootObject.Play();
         }
         else if(downDir)
         {
-            Debug.Log("Released");
             timeBtwAttack = Time.time + 1f / attackRate;  
             downDir = false;
             faktor = 1;
@@ -75,18 +72,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void DownWeapon()
     {
-        weaponHolder.rotation = Quaternion.Euler(0,transform.localEulerAngles.y,grad);
+        weaponHolder.localEulerAngles = new Vector3(0, 0, grad);
     }
 
     private void UpWeapon()
     {
-        weaponHolder.rotation = Quaternion.Euler(0,transform.localEulerAngles.y,grad);
+        weaponHolder.localEulerAngles = new Vector3(0,0, grad);
     }
 
     private void FollowShoot()
     {
         shootObject.Play();
-        shootDelay = shootTimer;
+        shootDelay = timeBtwShoot;
     }
 
     private void EndDownWeapon()
