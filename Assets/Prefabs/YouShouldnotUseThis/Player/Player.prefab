@@ -667,8 +667,8 @@ MonoBehaviour:
   weaponHolder: {fileID: 7835550923051301234}
   attackRate: 2
   shootObject: {fileID: 6989709749678141235}
-  shootTimer: 1
-  maxMultipleShoots: 5
+  timeBtwShoot: 0.5
+  maxShootTime: 1.5
 --- !u!70 &6124242144782334603
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 5793331191028530894}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5673,6 +5673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pS: {fileID: 6989709749678141235}
+  damage: 1
 --- !u!1 &7351693894198168715
 GameObject:
   m_ObjectHideFlags: 0
