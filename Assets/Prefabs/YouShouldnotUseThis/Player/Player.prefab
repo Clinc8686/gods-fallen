@@ -633,7 +633,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &4325973160980924468
 MonoBehaviour:
@@ -667,8 +667,8 @@ MonoBehaviour:
   weaponHolder: {fileID: 7835550923051301234}
   attackRate: 2
   shootObject: {fileID: 6989709749678141235}
-  shootTimer: 1
-  maxMultipleShoots: 5
+  timeBtwShoot: 2
+  maxShootTime: 5
 --- !u!70 &6124242144782334603
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
