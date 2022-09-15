@@ -7,30 +7,38 @@ using UnityEngine.UI;
 
 public class WeaponAnimation : MonoBehaviour
 {
+    private GameObject skyWeapon;
+    private GameObject earthWeapon;
+    private GameObject hellWeapon;
+    private GameObject leereWeapon;
     private void Start()
     {
         setInactive();
+        skyWeapon = transform.GetChild(3).gameObject;
+        earthWeapon = transform.GetChild(1).gameObject;
+        hellWeapon = transform.GetChild(2).gameObject;
+        leereWeapon = transform.GetChild(0).gameObject;
     }
 
     void Update()
     {
         float playerHeight = transform.position.y;
-        if (playerHeight >= PlayerAnimations.skyHeight)
+        if (playerHeight >= PlayerAnimations.skyHeight && !skyWeapon.gameObject.activeSelf)
         {
             setInactive();
-            transform.GetChild(3).gameObject.SetActive(true);
-        } else if (playerHeight >= PlayerAnimations.earthHeight)
+            skyWeapon.SetActive(true);
+        } else if (playerHeight >= PlayerAnimations.earthHeight && !earthWeapon.gameObject.activeSelf)
         {
             setInactive();
-            transform.GetChild(1).gameObject.SetActive(true);
-        } else if (playerHeight >= PlayerAnimations.hellHeight)
+            earthWeapon.SetActive(true);
+        } else if (playerHeight >= PlayerAnimations.hellHeight && !hellWeapon.gameObject.activeSelf)
         {
             setInactive();
-            transform.GetChild(2).gameObject.SetActive(true);
-        } else if (playerHeight >= PlayerAnimations.leereHeight)
+            hellWeapon.SetActive(true);
+        } else if (playerHeight >= PlayerAnimations.leereHeight && !leereWeapon.gameObject.activeSelf)
         {
             setInactive();
-            transform.GetChild(0).gameObject.SetActive(true);
+            leereWeapon.SetActive(true);
         }
     }
 
@@ -41,4 +49,5 @@ public class WeaponAnimation : MonoBehaviour
         transform.GetChild(2).gameObject.SetActive(false);
         transform.GetChild(3).gameObject.SetActive(false);
     }
+    
 }
