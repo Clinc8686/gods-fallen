@@ -8,7 +8,9 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public float scoreAmount;
     public float pointIncrease;
-    private int x;
+    private int enemyAmount;
+    private int counter;
+    GameObject[] enemies;
 
 
     // Start is called before the first frame update
@@ -16,14 +18,21 @@ public class Score : MonoBehaviour
     {
         scoreAmount = 0f;
         pointIncrease = 1f;
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        x = enemies.Length;
+         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemyAmount = enemies.Length;
+        counter = enemyAmount;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if()
+        enemyAmount = enemies.Length;
+        if (enemyAmount < counter)
+        {
+            scoreAmount -= 2;
+            counter--;
+        } 
         scoreText.text = (int)scoreAmount + " Sec";
         scoreAmount += pointIncrease * Time.deltaTime;
 
