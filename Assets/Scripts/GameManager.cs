@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
         spawnPlayerOnTop();
         setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
         showSpeechBubble(true);
-        ChangePlayGround(false);
+        showPlayGround(false);
+        showEnemies(false);
     }
     
     void Update()
@@ -37,17 +38,27 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         if (IsGrounded() && _playGroundEnabled == false) {
-            ChangePlayGround(true);
+            showPlayGround(true);
             showSpeechBubble(false);
         }
     }
 
-    private void ChangePlayGround(bool status)
+    private void showPlayGround(bool status)
     {
         _playGroundEnabled = status;
         playGround.SetActive(status);
     }
 
+    private void showEnemies(bool status)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+ 
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].SetActive(status);
+        }
+    }
+    
     public void setSpeechBubbleText(String text)
     {
         TextMeshProUGUI speechBubbleText = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
