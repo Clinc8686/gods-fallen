@@ -414,7 +414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2202838526323337722}
   m_LocalRotation: {x: -0, y: -0, z: -0.69428194, w: 0.71970314}
-  m_LocalPosition: {x: 0.514, y: 0.449, z: 0}
+  m_LocalPosition: {x: 0.426, y: 0.508, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -666,9 +666,11 @@ MonoBehaviour:
   downMoveSpeed: 300
   weaponHolder: {fileID: 7835550923051301234}
   attackRate: 2
-  shootObject: {fileID: 6989709749678141235}
+  shootObject: {fileID: 5009184646970900497, guid: ad56ba62b20d6c94eb2963f91e59075b, type: 3}
+  spawnLocation: {fileID: 8099159465977036705}
   timeBtwShoot: 0.5
   maxShootTime: 1.5
+  weaponAnimator: {fileID: 0}
 --- !u!70 &6124242144782334603
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5674,6 +5676,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pS: {fileID: 6989709749678141235}
   damage: 1
+--- !u!1 &4428030517955295399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8099159465977036705}
+  m_Layer: 0
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8099159465977036705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428030517955295399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.866, y: 0.748, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7835550923051301234}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7351693894198168715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5703,6 +5736,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8428014527217732106}
+  - {fileID: 8099159465977036705}
   m_Father: {fileID: 8171576112162623102}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

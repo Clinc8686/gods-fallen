@@ -1,21 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private float upMoveSpeed = 100;
-    [SerializeField] private float downMoveSpeed = 200;
     [SerializeField] private Transform weaponHolder;
     [SerializeField] private float attackRate = 5f; //per Sek
-    [SerializeField] private ParticleSystem shootObject;
+    [SerializeField] private GameObject shootObject;
+    [SerializeField] private Transform spawnLocation;
     [SerializeField] private float timeBtwShoot = 0.5f;
     [SerializeField] private float maxShootTime = 1.5f;
-    private float grad;
-    private int faktor = 1;
+    [SerializeField] private Animator weaponAnimator;
     private float timeBtwAttack;
     private float shootDelay;
     private float maxMultShoots;
@@ -24,27 +26,19 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MoveWeapon();
+        
         if (downDir)
         {
-            grad += faktor * downMoveSpeed * Time.deltaTime;
-            grad = Mathf.Clamp(grad, -25, 0);
-            DownWeapon();
-
             if (shootDelay <= 0)
             {
-                FollowShoot();
+                Shoot();
             }
 
             if (maxMultShoots <= 0)
             {
                 EndDownWeapon();
             }
-        }
-        else
-        {
-            grad += faktor * upMoveSpeed * Time.deltaTime;
-            grad = Mathf.Clamp(grad, -25, 0);
-            UpWeapon();
         }
 
         maxMultShoots -= Time.deltaTime;
@@ -57,41 +51,39 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time >= timeBtwAttack && !downDir && value.isPressed)
         {
             downDir = true;
-            faktor = -1;
             maxMultShoots = maxShootTime;
-            shootDelay = timeBtwShoot;
-            shootObject.Play();
+            Shoot();
         }
         else if(downDir)
         {
             timeBtwAttack = Time.time + 1f / attackRate;  
             downDir = false;
-            faktor = 1;
         }
         
     }
 
-    private void DownWeapon()
+    private void MoveWeapon()
     {
-        weaponHolder.localEulerAngles = new Vector3(0, 0, grad);
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector3 startDir = (mousePosInWorld - weaponHolder.position);
+        Vector2 aimDir = new Vector2(startDir.x, startDir.y).normalized;
+
+        float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
+        weaponHolder.eulerAngles = new Vector3(0, 0, angle-40);
     }
 
-    private void UpWeapon()
+    private void Shoot()
     {
-        weaponHolder.localEulerAngles = new Vector3(0,0, grad);
-    }
-
-    private void FollowShoot()
-    {
-        shootObject.Play();
+        Instantiate(shootObject, spawnLocation.position, Quaternion.identity);
         shootDelay = timeBtwShoot;
+        weaponAnimator.SetTrigger("Attack");
     }
 
     private void EndDownWeapon()
     {
         timeBtwAttack = Time.time + 1f / attackRate;  
         downDir = false;
-        faktor = 1;
     }
 
     
