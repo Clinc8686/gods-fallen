@@ -19,6 +19,7 @@ public class PlayerAnimations : MonoBehaviour
     private float hellHeight;
     private float earthHeight;
     private float skyHeight;
+    // Start is called before the first frame update
     void Start()
     {
         SpriteRenderer srSky = sky.GetComponent<SpriteRenderer>();
@@ -34,6 +35,8 @@ public class PlayerAnimations : MonoBehaviour
         leereHeight = srLeere.bounds.center.y - srLeere.bounds.extents.y;
     }
     
+
+    // Update is called once per frame
     void Update()
     {
         float playerHeight = player.transform.position.y;
@@ -50,5 +53,6 @@ public class PlayerAnimations : MonoBehaviour
         {
             player.GetComponent<Animator>().runtimeAnimatorController = red;
         }
+        
     }
 }

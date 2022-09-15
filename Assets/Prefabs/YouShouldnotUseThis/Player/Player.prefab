@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 6124242144782334603}
   - component: {fileID: 6004936568609428696}
   - component: {fileID: 4852121846930075716}
+  - component: {fileID: 4540904415407852433}
   m_Layer: 0
   m_Name: Playerfigur
   m_TagString: Player
@@ -723,6 +724,21 @@ MonoBehaviour:
   red: {fileID: 9100000, guid: 18190b34ac4555f499e0391279aed81a, type: 2}
   green: {fileID: 9100000, guid: 612ee273181233c45ba3fffb660903bf, type: 2}
   blue: {fileID: 9100000, guid: 15c8814b2cba22645bf482f9d4199c0e, type: 2}
+--- !u!114 &4540904415407852433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689725653696329556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c710b14dec498ce48922f656f83f5153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1048576
 --- !u!1 &3175307167425590629
 GameObject:
   m_ObjectHideFlags: 0

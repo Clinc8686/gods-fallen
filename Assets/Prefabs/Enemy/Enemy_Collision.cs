@@ -11,7 +11,7 @@ public class Enemy_Collision : MonoBehaviour
         if (col.gameObject.tag == "Projectile")
         {
             Destroy(col.gameObject);
-            if (this.life <= 1)
+            if (life <= 1)
             {
                 Destroy(this.gameObject);
             }
