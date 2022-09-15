@@ -14,9 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerFigur;
     [SerializeField] private GameObject sky;
     
-    [SerializeField] private Image speechBubble;
-    private bool speechBubbleEnabled;
-    
+    [SerializeField] private GameObject speechBubble;
+
     public LayerMask groundLayer;
 
     //Finish
@@ -48,14 +47,7 @@ public class GameManager : MonoBehaviour
     private void ChangePlayGround(bool status)
     {
         _playGroundEnabled = status;
-        if (status)
-        {
-            playGround.SetActive(true);
-        }
-        else
-        {
-            playGround.SetActive(false);
-        }
+        playGround.SetActive(status);
     }
 
     public void setSpeechBubbleText(String text)
@@ -63,20 +55,12 @@ public class GameManager : MonoBehaviour
         TextMeshProUGUI speechBubbleText = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
         speechBubbleText.text = text;
     }
-    
+
     public void showSpeechBubble(bool status)
     {
-        speechBubbleEnabled = status;
-        if (status)
-        {
-            speechBubble.enabled = true;
-        }
-        else
-        {
-            speechBubble.enabled = false;
-        }
+        speechBubble.SetActive(status);
     }
-    
+
     private void spawnPlayerOnTop()
     {
         SpriteRenderer sr = sky.GetComponent<SpriteRenderer>();
