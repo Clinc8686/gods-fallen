@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject playerFigur;
     [SerializeField] private GameObject sky;
+    
+    [SerializeField] private Image speechBubble;
+    private bool speechBubbleEnabled;
     
     public LayerMask groundLayer;
 
@@ -22,9 +27,10 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        _playGroundEnabled = false;
-        ChangePlayGround();
+        ChangePlayGround(false);
         spawnPlayerOnTop();
+        setSpeechBubbleText("Es war ein mal vor langer, langer Zeit...blablabla");
+        showSpeechBubble(true);
     }
     
     void Update()
@@ -34,14 +40,15 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         if (IsGrounded() && _playGroundEnabled == false) {
-            _playGroundEnabled = true;
-            ChangePlayGround();
+            ChangePlayGround(true);
+            showSpeechBubble(false);
         }
     }
 
-    private void ChangePlayGround()
+    private void ChangePlayGround(bool status)
     {
-        if (_playGroundEnabled)
+        _playGroundEnabled = status;
+        if (status)
         {
             playGround.SetActive(true);
         }
@@ -51,6 +58,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void setSpeechBubbleText(String text)
+    {
+        TextMeshPro speechBubbleText = speechBubble.GetComponentInChildren<TextMeshPro>();
+        speechBubbleText.text = text;
+    }
+    
+    public void showSpeechBubble(bool status)
+    {
+        speechBubbleEnabled = status;
+        if (status)
+        {
+            speechBubble.enabled = true;
+        }
+        else
+        {
+            speechBubble.enabled = false;
+        }
+    }
+    
     private void spawnPlayerOnTop()
     {
         SpriteRenderer sr = sky.GetComponent<SpriteRenderer>();
