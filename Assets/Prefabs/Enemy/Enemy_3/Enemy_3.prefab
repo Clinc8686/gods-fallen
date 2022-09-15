@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3158830356833638191}
   - component: {fileID: 3867466439349676497}
   - component: {fileID: 7643492787927393759}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 8828696739746419712}
   - component: {fileID: 3889816888609659474}
   - component: {fileID: 5470007665808848175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -249,4 +249,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd160b712116174faaba0d7072b575d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pS: {fileID: 0}
   life: 2
