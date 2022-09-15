@@ -15,11 +15,11 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField] private AnimatorController green;
     [SerializeField] private AnimatorController blue;
     
-    private float leereHeight;
-    private float hellHeight;
-    private float earthHeight;
-    private float skyHeight;
-    // Start is called before the first frame update
+    public static float leereHeight;
+    public static float hellHeight;
+    public static float earthHeight;
+    public static float skyHeight;
+
     void Start()
     {
         SpriteRenderer srSky = sky.GetComponent<SpriteRenderer>();
@@ -35,8 +35,7 @@ public class PlayerAnimations : MonoBehaviour
         leereHeight = srLeere.bounds.center.y - srLeere.bounds.extents.y;
     }
     
-
-    // Update is called once per frame
+    
     void Update()
     {
         float playerHeight = player.transform.position.y;

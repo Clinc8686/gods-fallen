@@ -399,6 +399,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8428014527217732106}
   - component: {fileID: 1645574577310919045}
+  - component: {fileID: 3084344506439903539}
+  - component: {fileID: 2928778411438307594}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -462,17 +464,55 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e915a77f59149544a6a3fd5d58a79c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ca690beee8e0e848bf65ec93a385a95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3084344506439903539
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202838526323337722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2928778411438307594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202838526323337722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b59e14404aa6f34c94eefbb87e3ec40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leere_Weapon: {fileID: 9100000, guid: 4ac38819721abef439423c2e80babbd5, type: 2}
+  hell_Weapon: {fileID: 9100000, guid: 903888d86ebac1d408206068b3ea0466, type: 2}
+  sky_Weapon: {fileID: 21300000, guid: 5614762520627874abc8e945618f237c, type: 3}
+  earth_Weapon: {fileID: 21300000, guid: ed1d4a34ef4574a44b6063eb35a27c92, type: 3}
+  leere_Weapon_Sprite: {fileID: 21300000, guid: 9ca690beee8e0e848bf65ec93a385a95, type: 3}
+  hell_Weapon_Sprite: {fileID: 21300000, guid: 35187b492af0c1b4982f6d49efe5d0c3, type: 3}
 --- !u!1 &2689725653696329556
 GameObject:
   m_ObjectHideFlags: 0
