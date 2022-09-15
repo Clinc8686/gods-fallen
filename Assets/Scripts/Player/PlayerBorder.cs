@@ -22,7 +22,6 @@ public class PlayerBorder : MonoBehaviour
     
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, backgroundLayer);
         if (hit.collider != null) {
-            Debug.Log(hit.collider.name);
             return true;
         }
         return false;

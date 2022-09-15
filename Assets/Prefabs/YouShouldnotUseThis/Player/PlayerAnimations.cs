@@ -15,40 +15,48 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField] private AnimatorController green;
     [SerializeField] private AnimatorController blue;
     
-    public static float leereHeight;
+    public static float emptinessDepth;
+    public static float hellDepth;
+    public static float earthDepth;
+    public static float skyDepth;
+    public static float emptinessHeight;
     public static float hellHeight;
-    public static float earthHeight;
-    public static float skyHeight;
+    public static float earthHeigth;
+    public static float skyHeigth;
 
     void Start()
     {
         SpriteRenderer srSky = sky.GetComponent<SpriteRenderer>();
-        skyHeight = srSky.bounds.center.y - srSky.bounds.extents.y;
+        skyDepth = srSky.bounds.center.y - srSky.bounds.extents.y;
+        skyHeigth = srSky.bounds.center.y + srSky.bounds.extents.y;
         
         SpriteRenderer srEarth = earth.GetComponent<SpriteRenderer>();
-        earthHeight = srEarth.bounds.center.y - srEarth.bounds.extents.y;
+        earthDepth = srEarth.bounds.center.y - srEarth.bounds.extents.y;
+        earthHeigth = srEarth.bounds.center.y + srEarth.bounds.extents.y;
         
         SpriteRenderer srHell = hell.GetComponent<SpriteRenderer>();
-        hellHeight = srHell.bounds.center.y - srHell.bounds.extents.y;
+        hellDepth = srHell.bounds.center.y - srHell.bounds.extents.y;
+        hellHeight = srHell.bounds.center.y + srHell.bounds.extents.y;
         
         SpriteRenderer srLeere = leere.GetComponent<SpriteRenderer>();
-        leereHeight = srLeere.bounds.center.y - srLeere.bounds.extents.y;
+        emptinessDepth = srLeere.bounds.center.y - srLeere.bounds.extents.y;
+        emptinessHeight = srLeere.bounds.center.y + srLeere.bounds.extents.y;
     }
     
     
     void Update()
     {
         float playerHeight = player.transform.position.y;
-        if (playerHeight >= skyHeight)
+        if (playerHeight >= skyDepth)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = blue;
-        } else if (playerHeight >= earthHeight)
+        } else if (playerHeight >= earthDepth)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = green;
-        } else if (playerHeight >= hellHeight)
+        } else if (playerHeight >= hellDepth)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = red;
-        } else if (playerHeight >= leereHeight)
+        } else if (playerHeight >= emptinessDepth)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = red;
         }

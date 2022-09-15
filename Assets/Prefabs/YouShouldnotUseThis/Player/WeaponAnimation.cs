@@ -23,23 +23,29 @@ public class WeaponAnimation : MonoBehaviour
     void Update()
     {
         float playerHeight = transform.position.y;
-        if (playerHeight >= PlayerAnimations.skyHeight && !skyWeapon.gameObject.activeSelf)
+        if (playerHeight > PlayerAnimations.skyDepth && playerHeight < PlayerAnimations.skyHeigth && !skyWeapon.gameObject.activeSelf)
         {
             setInactive();
             skyWeapon.SetActive(true);
-        } else if (playerHeight >= PlayerAnimations.earthHeight && !earthWeapon.gameObject.activeSelf)
+            Debug.Log("sky");
+        } else if (playerHeight > PlayerAnimations.earthDepth && playerHeight < PlayerAnimations.earthHeigth && !earthWeapon.gameObject.activeSelf)
         {
             setInactive();
             earthWeapon.SetActive(true);
-        } else if (playerHeight >= PlayerAnimations.hellHeight && !hellWeapon.gameObject.activeSelf)
+            Debug.Log("earth" + earthWeapon.gameObject.activeSelf);
+        } else if (playerHeight > PlayerAnimations.hellDepth && playerHeight < PlayerAnimations.hellHeight && !hellWeapon.gameObject.activeSelf)
         {
             setInactive();
             hellWeapon.SetActive(true);
-        } else if (playerHeight >= PlayerAnimations.leereHeight && !leereWeapon.gameObject.activeSelf)
+            Debug.Log("hell" + hellWeapon.gameObject.activeSelf);
+        } else if (playerHeight > PlayerAnimations.emptinessDepth && playerHeight < PlayerAnimations.emptinessHeight && !leereWeapon.gameObject.activeSelf)
         {
             setInactive();
             leereWeapon.SetActive(true);
+            Debug.Log("leere");
         }
+        Debug.Log("earth2" + earthWeapon.gameObject.activeSelf);
+        Debug.Log("hell2" + hellWeapon.gameObject.activeSelf); 
     }
 
     void setInactive()
