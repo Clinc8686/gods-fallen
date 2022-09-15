@@ -13,9 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject playerFigur;
     [SerializeField] private GameObject sky;
-    
     [SerializeField] private GameObject speechBubble;
-
     public LayerMask groundLayer;
 
     //Finish
@@ -26,10 +24,11 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        ChangePlayGround(false);
         spawnPlayerOnTop();
         setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
         showSpeechBubble(true);
+        showPlayGround(false);
+        showEnemies(false);
     }
     
     void Update()
@@ -39,17 +38,28 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         if (IsGrounded() && _playGroundEnabled == false) {
-            ChangePlayGround(true);
+            showPlayGround(true);
             showSpeechBubble(false);
+            showEnemies(true);
         }
     }
 
-    private void ChangePlayGround(bool status)
+    private void showPlayGround(bool status)
     {
         _playGroundEnabled = status;
         playGround.SetActive(status);
     }
 
+    private void showEnemies(bool status)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+ 
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].SetActive(status);
+        }
+    }
+    
     public void setSpeechBubbleText(String text)
     {
         TextMeshProUGUI speechBubbleText = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
