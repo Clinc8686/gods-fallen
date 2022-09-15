@@ -3,7 +3,15 @@ guid: 27cb80c73d4690747b8a424e8140f742
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - leere: {instanceID: 0}
+  - hell: {instanceID: 0}
+  - earth: {instanceID: 0}
+  - sky: {instanceID: 0}
+  - player: {instanceID: 0}
+  - red: {instanceID: 0}
+  - green: {instanceID: 0}
+  - blue: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

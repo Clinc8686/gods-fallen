@@ -218,7 +218,7 @@ MonoBehaviour:
   bottomCollider: {fileID: 6769693984068462784}
   playerFigur: {fileID: 6102921749090511601}
   sky: {fileID: 5101688637585020856}
-  speechBubble: {fileID: 987003702231561147}
+  speechBubble: {fileID: 8401767755462119410}
   groundLayer:
     serializedVersion: 2
     m_Bits: 524288
@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4540904415407852433, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
+      propertyPath: backgroundLayer.m_Bits
+      value: 1048576
+      objectReference: {fileID: 0}
     - target: {fileID: 4852121846930075716, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
       propertyPath: sky
       value: 
@@ -482,21 +486,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2689725653696329556, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
   m_PrefabInstance: {fileID: 8206189383873240485}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4483155131410206302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6102921749090511601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c710b14dec498ce48922f656f83f5153, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1048576
 --- !u!1 &6769693984068462784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3175307167425590629, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
@@ -1305,6 +1294,14 @@ PrefabInstance:
     - target: {fileID: 3522437647134923770, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[121].X
       value: -150000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399731550849069173, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399731550849069173, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4668953973045497808, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].x
@@ -2177,6 +2174,10 @@ PrefabInstance:
     - target: {fileID: 4668953973045497808, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[2].Array.data[13].Y
       value: 879850078
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098771962429740454, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6596159585296171580, guid: 45cf240e39f6b4444996b2aa1e8b05f3, type: 3}
       propertyPath: m_RootOrder

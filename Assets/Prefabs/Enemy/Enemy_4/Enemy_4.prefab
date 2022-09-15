@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2311834040732358528}
   - component: {fileID: 7293828032043877580}
   - component: {fileID: 8042745549698502223}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2765849010183754063}
   - component: {fileID: 8488878227801412888}
   - component: {fileID: 1754438560627548247}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd160b712116174faaba0d7072b575d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pS: {fileID: 0}
   life: 2
 --- !u!61 &6673674972892713500
 BoxCollider2D:

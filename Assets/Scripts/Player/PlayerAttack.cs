@@ -10,10 +10,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float upMoveSpeed = 100;
     [SerializeField] private float downMoveSpeed = 200;
     [SerializeField] private Transform weaponHolder;
-    [SerializeField] private float attackRate = 2f; //per Sek
+    [SerializeField] private float attackRate = 5f; //per Sek
     [SerializeField] private ParticleSystem shootObject;
-    [SerializeField] private float timeBtwShoot = 2;
-    [SerializeField] private float maxShootTime = 5f;
+    [SerializeField] private float timeBtwShoot = 0.5f;
+    [SerializeField] private float maxShootTime = 1.5f;
     private float grad;
     private int faktor = 1;
     private float timeBtwAttack;
@@ -24,11 +24,10 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grad += faktor * upMoveSpeed * Time.deltaTime;
-        grad = Mathf.Clamp(grad, -25, 0);
-        
         if (downDir)
         {
+            grad += faktor * downMoveSpeed * Time.deltaTime;
+            grad = Mathf.Clamp(grad, -25, 0);
             DownWeapon();
 
             if (shootDelay <= 0)
@@ -43,6 +42,8 @@ public class PlayerAttack : MonoBehaviour
         }
         else
         {
+            grad += faktor * upMoveSpeed * Time.deltaTime;
+            grad = Mathf.Clamp(grad, -25, 0);
             UpWeapon();
         }
 

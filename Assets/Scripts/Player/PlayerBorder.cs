@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBorder : MonoBehaviour
 {
-    public LayerMask groundLayer;
+    public LayerMask backgroundLayer;
     private void FixedUpdate()
     {
         if (!IsOnBackground())
@@ -16,11 +17,12 @@ public class PlayerBorder : MonoBehaviour
 
     bool IsOnBackground() {
         Vector2 position = transform.position;
-        Vector2 direction = Vector2.down;
+        Vector3 direction = Vector3.back;
         float distance = 2.0f;
     
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, backgroundLayer);
         if (hit.collider != null) {
+            Debug.Log(hit.collider.name);
             return true;
         }
         return false;
