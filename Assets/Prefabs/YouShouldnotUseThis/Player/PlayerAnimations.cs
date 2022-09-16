@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
@@ -11,10 +10,10 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField] private GameObject earth;
     [SerializeField] private GameObject sky;
     [SerializeField] private GameObject player;
-    [SerializeField] private AnimatorController red;
-    [SerializeField] private AnimatorController green;
-    [SerializeField] private AnimatorController blue;
-    
+    [SerializeField] private AnimatorOverrideController  red;
+    [SerializeField] private AnimatorOverrideController  green;
+    [SerializeField] private AnimatorOverrideController  blue;
+
     public static float emptinessDepth;
     public static float hellDepth;
     public static float earthDepth;
