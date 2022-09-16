@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBorder : MonoBehaviour
 {
@@ -10,8 +11,7 @@ public class PlayerBorder : MonoBehaviour
     {
         if (!IsOnBackground())
         {
-            Debug.Log("player hat verloren!");
-            //hier Game Over Screen aufrufen oder Spieler neu Spawnen
+            SceneManager.LoadScene("GameOverMenue"); 
         }
     }
 

@@ -47,16 +47,16 @@ public class PlayerAnimations : MonoBehaviour
     void Update()
     {
         float playerHeight = player.transform.position.y;
-        if (playerHeight >= skyDepth)
+        if (playerHeight > skyDepth && playerHeight < skyHeigth)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = blue;
-        } else if (playerHeight >= earthDepth)
+        } else if (playerHeight > earthDepth && playerHeight < earthHeigth)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = green;
-        } else if (playerHeight >= hellDepth)
+        } else if (playerHeight > hellDepth && playerHeight < hellHeight)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = red;
-        } else if (playerHeight >= emptinessDepth)
+        } else if (playerHeight > emptinessDepth && playerHeight < emptinessHeight)
         {
             player.GetComponent<Animator>().runtimeAnimatorController = red;
         }
