@@ -787,6 +787,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   invincibleTime: 1
+  healthbar: {fileID: 0}
+  emptyHeart: {fileID: 21300000, guid: 771735e649f4c2248a6eaa1725f93c69, type: 3}
 --- !u!70 &6124242144782334603
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
