@@ -14,7 +14,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Sprite emptyHeart;
     [SerializeField] private Animator heartAnimator;
     private float invinc;
-    private GameObject[] hearts; 
+    private GameObject[] hearts;
+    private ParticleSystem pSBleeding;
 
     private void Start()
     {
@@ -25,6 +26,9 @@ public class PlayerHealth : MonoBehaviour
         {
             hearts[i] = healthbar.transform.GetChild(i).gameObject;
         }
+
+        pSBleeding = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
+        Debug.Log(pSBleeding + " " + transform.GetChild(0).GetChild(0));
     }
 
     private void Update()
@@ -58,8 +62,9 @@ public class PlayerHealth : MonoBehaviour
             invinc = invincibleTime;
             heartAnimator = hearts[health].GetComponent<Animator>();
             heartAnimator.SetTrigger("Flatter");
-            
             hearts[health].GetComponent<Image>().sprite = emptyHeart;
+
+            pSBleeding.Play();
 
             if (health <= 0)
             {
