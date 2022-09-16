@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class NavigateMenu : MonoBehaviour
 {
-    public void SwitchScene(String sceneName)
+    public void SwitchScene(int scene)
     {
-        if (sceneName.Equals("Exit"))
+        Debug.Log("ja " + scene);
+        if (scene == -1)
         {
             Application.Quit();
         }
         else
         {
-           SceneManager.LoadScene(sceneName); 
+            SceneManager.LoadScene(scene);
         }
     }
 }
