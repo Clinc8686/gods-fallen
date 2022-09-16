@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7875398488979386688}
   - component: {fileID: 771489350813105265}
   - component: {fileID: 5033367715190607126}
+  - component: {fileID: 7084002734267671729}
   m_Layer: 18
   m_Name: TestBullet
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5e9b468c2b6fa24898120e2891c53bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.3, y: 0.3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,3 +150,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7084002734267671729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009184646970900497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100bf470ef43eda41980e58b1f2f5f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earth: {fileID: 21300000, guid: bfdeecdc7f9ea684ea3884ad191901b5, type: 3}
+  emptiness: {fileID: 21300000, guid: f5e9b468c2b6fa24898120e2891c53bd, type: 3}
+  sky: {fileID: 21300000, guid: a98010f3aaaaa0543a7165baf70ace67, type: 3}
+  hell: {fileID: 21300000, guid: bff93c79bd857d2478a507343c2437f7, type: 3}
