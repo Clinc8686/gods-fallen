@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float invincibleTime = 1f;
     [SerializeField] private GameObject healthbar;
     [SerializeField] private Sprite emptyHeart;
+    [SerializeField] private Animator heartAnimator;
     private float invinc;
     private GameObject[] hearts; 
 
@@ -55,6 +56,9 @@ public class PlayerHealth : MonoBehaviour
         {
             health--;
             invinc = invincibleTime;
+            heartAnimator = hearts[health].GetComponent<Animator>();
+            heartAnimator.SetTrigger("Flatter");
+            
             hearts[health].GetComponent<Image>().sprite = emptyHeart;
 
             if (health <= 0)
