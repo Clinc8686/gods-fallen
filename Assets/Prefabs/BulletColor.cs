@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class BulletColor : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class BulletColor : MonoBehaviour
     [SerializeField] private Sprite sky;
     [SerializeField] private Sprite hell;
 
+    [SerializeField] private GameObject leere;
+    [SerializeField] private GameObject himmel;
+    [SerializeField] private GameObject hoelle;
+    [SerializeField] private GameObject erde;
 
 
-    public Transform Light;
-
+   
 
     private void Start()
     {
@@ -26,30 +30,38 @@ public class BulletColor : MonoBehaviour
         if (playerHeight > PlayerAnimations.skyDepth && playerHeight < PlayerAnimations.skyHeigth)
         {
             GetComponent<SpriteRenderer>().sprite = sky;
-            Light = transform.FindChild("LightLeere");
-            Light.gameObject.SetActive(true);
+            setfalse();
+            himmel.SetActive(true);
+           
         } else if (playerHeight > PlayerAnimations.earthDepth && playerHeight < PlayerAnimations.earthHeigth)
         {
+
+            setfalse();
+            erde.SetActive(true);
             GetComponent<SpriteRenderer>().sprite = earth;
             
-            Light.gameObject.SetActive(false);
-            Light = transform.FindChild("LightHell");
-            Light.gameObject.SetActive(true);
+           
 
         } else if (playerHeight > PlayerAnimations.hellDepth && playerHeight < PlayerAnimations.hellHeight)
         {
+            setfalse();
+            hoelle.SetActive(true);
             GetComponent<SpriteRenderer>().sprite = hell;
-            Light.gameObject.SetActive(false);
-            Light = transform.FindChild("LightEarth");
-            Light.gameObject.SetActive(true);
+         
 
         } else if (playerHeight > PlayerAnimations.emptinessDepth && playerHeight < PlayerAnimations.emptinessHeight)
         {
+            leere.SetActive(true);
+            setfalse();
             GetComponent<SpriteRenderer>().sprite = emptiness;
-            Light.gameObject.SetActive(false);
-            Light = transform.FindChild("LightHeaven");
-            Light.gameObject.SetActive(true);
-
+            
         }
+    }
+    void setfalse()
+    {
+        himmel.SetActive(false);
+        erde.SetActive(false);
+        hoelle.SetActive(false);
+        leere.SetActive(false);
     }
 }
