@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerFigur;
     [SerializeField] private GameObject sky;
     [SerializeField] private GameObject speechBubble;
+    [SerializeField] private GameObject thoughtBubble;
     public LayerMask groundLayer;
     private GameObject[] enemies;
     public static bool isBeginning = true;
@@ -29,14 +30,11 @@ public class GameManager : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         spawnPlayerOnTop();
-        setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
+        //setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
         showSpeechBubble(true);
         showPlayGround(false);
         showEnemies(false);
-    }
-    
-    void Update()
-    {
+        showThoughtsBubble(false);
     }
     
     void FixedUpdate()
@@ -46,6 +44,7 @@ public class GameManager : MonoBehaviour
             showSpeechBubble(false);
             showEnemies(true);
             isBeginning = false;
+            showThoughtsBubble(true);
         }
     }
 
@@ -72,6 +71,29 @@ public class GameManager : MonoBehaviour
     public void showSpeechBubble(bool status)
     {
         speechBubble.SetActive(status);
+    }
+
+    private void showThoughtsBubble(bool status)
+    {
+        if (status)
+        {
+            Invoke("enableThoughts", 2f);
+            Invoke("disableThoughts", 7f);
+        }
+        else
+        {
+            disableThoughts();
+        }
+    }
+
+    private void enableThoughts()
+    {
+        thoughtBubble.SetActive(true);
+    }
+
+    private void disableThoughts()
+    {
+        thoughtBubble.SetActive(false);
     }
 
     private void spawnPlayerOnTop()

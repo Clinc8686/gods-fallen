@@ -3,17 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
 
     [SerializeField] private int health = 3;
     [SerializeField] private float invincibleTime = 1f;
+    [SerializeField] private GameObject healthbar;
+    [SerializeField] private Sprite emptyHeart;
     private float invinc;
+    private GameObject[] hearts; 
 
     private void Start()
     {
         invinc = invincibleTime;
+        hearts = new GameObject[healthbar.transform.childCount];
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i] = healthbar.transform.GetChild(i).gameObject;
+        }
     }
 
     private void Update()
@@ -34,9 +44,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy" && (invinc <= 0))
         {
-            Debug.Log("Hit Enemy");
             health--;
             invinc = invincibleTime;
+            hearts[health].GetComponent<Image>().sprite = emptyHeart;
 
             if (health <= 0)
             {
