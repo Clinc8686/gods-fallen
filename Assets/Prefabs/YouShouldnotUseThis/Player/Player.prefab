@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6387356981239677554}
   - component: {fileID: 7482449568058306227}
   - component: {fileID: 8225272773050299045}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699395106411556681}
   - component: {fileID: 1699395106411556680}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Spotlight2D_Boden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699395106414727573}
   - component: {fileID: 1699395106414727572}
-  m_Layer: 20
+  m_Layer: 17
   m_Name: Spotlight2D_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1699395106549929004}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692034454063162593}
   - component: {fileID: 8548255885933768271}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 4.2}
+  m_Size: {x: 2, y: 2.6635513}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 8428014527217732106}
   - component: {fileID: 1645574577310919045}
   - component: {fileID: 4317261002056767887}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 6004936568609428696}
   - component: {fileID: 4852121846930075716}
   - component: {fileID: 4540904415407852433}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Playerfigur
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7267416407792930944}
   - component: {fileID: 5099438775690596716}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: BottomCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8099159465977036705}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: ProjectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 1733651003883665672}
   - component: {fileID: 6453520084632011734}
   - component: {fileID: 4785718684786429173}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Leere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 8833175882502765729}
   - component: {fileID: 1534399242436092828}
   - component: {fileID: 7656025331140241771}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Hell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,7 +1139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768287077052726217}
   - component: {fileID: 1943168006046156236}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7835550923051301234}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
