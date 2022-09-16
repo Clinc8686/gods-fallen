@@ -23,20 +23,6 @@ public class BulletMovement : MonoBehaviour
         Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
         Vector3 startDir = (mousePosInWorld - transform.position).normalized;
         Vector2 velo = new Vector2(startDir.x, startDir.y).normalized;
-
-        //Schiessen nur, wenn Figur und Maus in selbe Richtung zeigen
-        /*Debug.Log(player.eulerAngles + " " + velo);
-
-        if (player.eulerAngles.y == 0 && velo.x < 0.6)
-        {
-            velo.x = 0.6f;
-        }
-
-        if (player.eulerAngles.y == 180 && velo.x > -0.6)
-        {
-            velo.x = -0.6f;
-        }*/
-        
         rB.velocity = velo * moveSpeed ;
     }
 

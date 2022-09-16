@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Enemy_Life : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem pS;
-    public float life = 2;
+    [SerializeField] private float life = 2;
 
     public void takeLife(float dmg)
     {

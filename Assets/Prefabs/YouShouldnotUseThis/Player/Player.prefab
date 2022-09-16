@@ -399,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692034454063162593}
   - component: {fileID: 8548255885933768271}
-  m_Layer: 17
+  m_Layer: 16
   m_Name: Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 8428014527217732106}
   - component: {fileID: 1645574577310919045}
   - component: {fileID: 4317261002056767887}
-  m_Layer: 17
+  m_Layer: 16
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2202838526323337722}
   m_LocalRotation: {x: -0, y: -0, z: -0.69428194, w: 0.71970314}
-  m_LocalPosition: {x: 0.426, y: 0.508, z: 0}
+  m_LocalPosition: {x: 0.239, y: 0.61, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -550,7 +550,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 7e915a77f59149544a6a3fd5d58a79c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -659,7 +659,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: ef7776eb427ef1649b03241fbcd91d6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -763,11 +763,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 7835550923051301234}
-  attackRate: 2
+  attackRate: 5
   shootObject: {fileID: 5009184646970900497, guid: ad56ba62b20d6c94eb2963f91e59075b, type: 3}
   spawnLocation: {fileID: 8099159465977036705}
-  timeBtwShoot: 0.5
-  maxShootTime: 1.5
+  timeBtwShoot: 0.2
+  maxShootTime: 1
   weaponAnimator: {fileID: 0}
 --- !u!70 &6124242144782334603
 CapsuleCollider2D:
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 1733651003883665672}
   - component: {fileID: 6453520084632011734}
   - component: {fileID: 4785718684786429173}
-  m_Layer: 17
+  m_Layer: 16
   m_Name: Leere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 8833175882502765729}
   - component: {fileID: 1534399242436092828}
   - component: {fileID: 7656025331140241771}
-  m_Layer: 17
+  m_Layer: 16
   m_Name: Hell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,7 +1139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768287077052726217}
   - component: {fileID: 1943168006046156236}
-  m_Layer: 17
+  m_Layer: 16
   m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7351693894198168715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.014, y: 0.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

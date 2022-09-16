@@ -35,8 +35,4 @@ public class Attack_Area : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-       
-    }
 }
