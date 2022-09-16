@@ -11,7 +11,7 @@ public class PlayerBorder : MonoBehaviour
     {
         if (!IsOnBackground())
         {
-            SceneManager.LoadScene("GameOverMenue"); 
+            StartCoroutine(LoadGameOver());
         }
     }
 
@@ -25,5 +25,11 @@ public class PlayerBorder : MonoBehaviour
             return true;
         }
         return false;
+    }
+    
+    IEnumerator LoadGameOver()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(3); 
     }
 }
