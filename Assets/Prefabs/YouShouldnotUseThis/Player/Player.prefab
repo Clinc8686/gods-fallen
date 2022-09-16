@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 1805372217586199140}
   - component: {fileID: 4325973160980924468}
   - component: {fileID: 8510912724312757290}
+  - component: {fileID: 8210405440820419717}
   - component: {fileID: 6124242144782334603}
   - component: {fileID: 6004936568609428696}
   - component: {fileID: 4852121846930075716}
@@ -769,6 +770,20 @@ MonoBehaviour:
   timeBtwShoot: 0.2
   maxShootTime: 1
   weaponAnimator: {fileID: 0}
+--- !u!114 &8210405440820419717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689725653696329556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b49f735eafca546b6cd0d649c84c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  invincibleTime: 1
 --- !u!70 &6124242144782334603
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
