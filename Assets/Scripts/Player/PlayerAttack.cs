@@ -18,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float timeBtwShoot = 0.5f;
     [SerializeField] private float maxShootTime = 1.5f;
     [SerializeField] private Animator weaponAnimator;
+    [SerializeField] private AudioSource shootSource;
     private float timeBtwAttack;
     private float shootDelay;
     private float maxMultShoots;
@@ -78,6 +79,7 @@ public class PlayerAttack : MonoBehaviour
         Instantiate(shootObject, spawnLocation.position, Quaternion.identity);
         shootDelay = timeBtwShoot;
         weaponAnimator.SetTrigger("Attack");
+        shootSource.Play();
     }
 
     private void EndDownWeapon()

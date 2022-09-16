@@ -13,6 +13,8 @@ public class PlayerJump : MonoBehaviour
     private bool grounded = false;
     private int countJump = 0;
     private Rigidbody2D rb;
+    [SerializeField] private AudioSource jumpSource;
+    [SerializeField] private AudioSource bottomSource;
 
     private void Start()
     {
@@ -26,6 +28,10 @@ public class PlayerJump : MonoBehaviour
             //gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);
             rb.velocity = new Vector2(rb.velocity.x, jumpHigh);
             countJump++;
+            if (!jumpSource.isPlaying)
+            {
+                jumpSource.Play();
+            }
         }
     }
 
@@ -40,10 +46,11 @@ public class PlayerJump : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if ((other.collider.name == "Bottom" || other.collider.name == "PlayGround") &&
-            other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>())) //Mario
+            other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>()))
         {
             grounded = true;
             countJump = 0;
+            bottomSource.Play();
         }
     }
 
@@ -58,7 +65,7 @@ public class PlayerJump : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if ((other.collider.name == "Bottom" || other.collider.name == "PlayGround") && other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>())) //Mario
+        if ((other.collider.name == "Bottom" || other.collider.name == "PlayGround") && other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>()))
         {
             grounded = true;
             countJump = 0;
