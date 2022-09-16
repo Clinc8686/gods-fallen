@@ -8,7 +8,6 @@ public class NavigateMenu : MonoBehaviour
 {
     public void SwitchScene(int scene)
     {
-        Debug.Log("ja " + scene);
         if (scene == -1)
         {
             Application.Quit();
