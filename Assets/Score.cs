@@ -6,41 +6,47 @@ public class Score : MonoBehaviour
 {
     
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI minusText;
     public float scoreAmount;
     public float pointIncrease;
+    private float dauer = 5f;
+    private float dauerReset = 5f;
   
-    private int counter;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         scoreAmount = 0f;
         pointIncrease = 1f;
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        int enemyAmount = enemies.Length;
-        counter = enemyAmount;
-
+   
+         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log("alt" + counter);
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        int enemyAmount = enemies.Length;
-        if (enemyAmount < counter && GameManager.isBeginning == false)
+       
+        
+       
+
+        if (HIghscore.EnemyDeath() == true)
         {
-            
-            scoreAmount -= 1;
-            counter--;
-            Debug.Log("neu" + counter);
-        } 
-        scoreText.text = (int)scoreAmount-1 + " Sec";
-        scoreAmount += pointIncrease * Time.deltaTime;
+            scoreAmount -= 2;
+            minusText.text =  "-2" ;
+        }
+        scoreText.text = "Time " + (int)scoreAmount;
+        scoreAmount += pointIncrease * Time.deltaTime; 
+        if(dauer > 0)
+        {
+            dauer -= Time.deltaTime;
+        }
+        if(dauer <= 0)
+        {
+            minusText.text = "";
+            dauer = dauerReset;
+        }
 
     }
 
-   
-   
+
+
+
+
 }
