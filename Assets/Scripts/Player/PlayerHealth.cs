@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (health <= 0)
             {
-                SceneManager.LoadScene("GameOverMenue");
+                SceneManager.LoadScene(3);
             }
         }
     }
