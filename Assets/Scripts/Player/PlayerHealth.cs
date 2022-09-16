@@ -21,6 +21,15 @@ public class PlayerHealth : MonoBehaviour
         invinc -= Time.deltaTime;
     }
 
+    private void FixedUpdate()
+    {
+        if (transform.position.y > 265)
+        {
+            //Player Wins
+            StartCoroutine(LoadWinScene());
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D col)
     {
         takePlayerLife(col);
@@ -43,5 +52,11 @@ public class PlayerHealth : MonoBehaviour
                 SceneManager.LoadScene(3);
             }
         }
+    }
+    
+    IEnumerator LoadWinScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(6); 
     }
 }

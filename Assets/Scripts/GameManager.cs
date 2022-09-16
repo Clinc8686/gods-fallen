@@ -19,12 +19,6 @@ public class GameManager : MonoBehaviour
     private GameObject[] enemies;
     public static bool isBeginning = true;
 
-    //Finish
-    public void CompleteLevel()
-    {
-        SceneManager.LoadScene(6);
-    }
-    
     void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
