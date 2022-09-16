@@ -34,11 +34,7 @@ public class GameManager : MonoBehaviour
         showPlayGround(false);
         showEnemies(false);
     }
-    
-    void Update()
-    {
-    }
-    
+
     void FixedUpdate()
     {
         if (IsGrounded() && _playGroundEnabled == false) {
