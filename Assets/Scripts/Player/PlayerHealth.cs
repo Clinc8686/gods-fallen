@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     private float invinc;
     private GameObject[] hearts;
     private ParticleSystem pSBleeding;
+    private ParticleSystem pSHealing;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         pSBleeding = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
+        pSHealing = transform.GetChild(0).GetChild(1).GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -83,6 +85,7 @@ public class PlayerHealth : MonoBehaviour
             heartAnimator = hearts[health].GetComponent<Animator>();
             heartAnimator.SetTrigger("Back");
             health++;
+            pSHealing.Play();
             Destroy(col.gameObject);
         }
     }
