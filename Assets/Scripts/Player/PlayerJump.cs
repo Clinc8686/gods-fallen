@@ -17,9 +17,6 @@ public class PlayerJump : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private AudioSource jumpSource;
     [SerializeField] private AudioSource bottomSource;
-    
-    [SerializeField] private float coyoteTime = 0.2f;
-    [SerializeField] private float jumpBuffer = 0.2f;
 
     private ParticleSystem pSDust;
     private ParticleSystem pSjumpDust;
