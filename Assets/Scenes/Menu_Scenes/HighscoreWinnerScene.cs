@@ -11,7 +11,7 @@ public class HighscoreWinnerScene : MonoBehaviour
         if (PlayerPrefs.HasKey("Highscore"))
         {
             float time = PlayerPrefs.GetFloat("Highscore");
-            score.SetText(time + "seconds");
+            score.SetText(time + " seconds");
         }
     }
 }
