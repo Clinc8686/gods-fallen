@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
+  anim: {fileID: 8042745549698502223}
 --- !u!61 &6673674972892713500
 BoxCollider2D:
   m_ObjectHideFlags: 0
