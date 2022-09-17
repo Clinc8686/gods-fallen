@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI minusText;
     public float scoreAmount;
     public float pointIncrease;
-    private float dauer = 5f;
+    private float dauer = 0;
     private float dauerReset = 5f;
   
     void Start()
