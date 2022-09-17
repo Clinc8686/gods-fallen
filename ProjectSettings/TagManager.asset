@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Background
   - Bottom
+  - Trap
   layers:
   - Default
   - TransparentFX

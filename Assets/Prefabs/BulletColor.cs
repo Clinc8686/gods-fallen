@@ -53,7 +53,6 @@ public class BulletColor : MonoBehaviour
         {
             setfalse();
             leere.SetActive(true);
-           
             GetComponent<SpriteRenderer>().sprite = emptiness;
             
         }
