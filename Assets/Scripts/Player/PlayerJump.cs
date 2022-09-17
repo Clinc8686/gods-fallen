@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Debug = UnityEngine.Debug;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -15,21 +17,29 @@ public class PlayerJump : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private AudioSource jumpSource;
     [SerializeField] private AudioSource bottomSource;
+    
+    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float jumpBuffer = 0.2f;
 
     private ParticleSystem pSDust;
-
+    private float coyoteTimeCounter;
+    private float jumpBufferCounter;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         pSDust = transform.GetChild(2).GetChild(0).GetComponent<ParticleSystem>();
-        Debug.Log(pSDust.name + " " + transform.GetChild(1).GetChild(1) );
     }
 
     private void OnJump(InputValue value)
     {
+        if (grounded)
+        {
+            grounded = false;
+        }
+
         if (value.isPressed && (countJump < 2))
         {
-            //gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);
             rb.velocity = new Vector2(rb.velocity.x, jumpHigh);
             countJump++;
             pSDust.Play();
@@ -37,6 +47,10 @@ public class PlayerJump : MonoBehaviour
             {
                 jumpSource.Play();
             }
+        }
+        else
+        {
+            pSDust.Stop();
         }
     }
 
@@ -46,6 +60,7 @@ public class PlayerJump : MonoBehaviour
         {
             rb.velocity -= new Vector2(0f, -Physics2D.gravity.y) * (Time.deltaTime * fallGravity);
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -53,27 +68,31 @@ public class PlayerJump : MonoBehaviour
         if ((other.collider.name == "Bottom" || other.collider.name == "PlayGround") &&
             other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>()))
         {
-            grounded = true;
-            countJump = 0;
+            ResetJumpCounter();
             bottomSource.Play();
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    /*private void OnCollisionExit2D(Collision2D other)
     {
         if (grounded)
         {
             countJump = 1;
             grounded = false;
         }
-    }
+    }*/
 
     private void OnCollisionStay2D(Collision2D other)
     {
         if ((other.collider.name == "Bottom" || other.collider.name == "PlayGround") && other.collider.IsTouching(bottomCollider.GetComponent<CapsuleCollider2D>()))
         {
-            grounded = true;
-            countJump = 0;
-        } 
+            ResetJumpCounter();
+        }
+    }
+
+    private void ResetJumpCounter() 
+    {
+        grounded = true;
+        countJump = 0;
     }
 }

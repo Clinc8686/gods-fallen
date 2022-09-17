@@ -18,8 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = sideFace;
         moveDirection = value.Get<Vector2>();
-        Debug.Log(moveDirection.x + " " + transform.localEulerAngles + " " + gameObject.GetComponent<SpriteRenderer>().sprite.name);
-        
+
         if (moveDirection.x < 0)
         {
             transform.rotation = Quaternion.Euler(0,-180,0);
