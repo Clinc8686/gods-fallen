@@ -1122,7 +1122,6 @@ GameObject:
   - component: {fileID: 1589482866}
   - component: {fileID: 1589482869}
   - component: {fileID: 1589482868}
-  - component: {fileID: 1589482867}
   m_Layer: 5
   m_Name: HighscoreHead
   m_TagString: Untagged
@@ -1150,18 +1149,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: 10}
   m_SizeDelta: {x: 1920, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1589482867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589482865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e048dc0e33c383d4ab27ee8416203e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1589482868
 MonoBehaviour:
   m_ObjectHideFlags: 0

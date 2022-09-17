@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         spawnPlayerOnTop();
-        setSpeechBubbleText("Once upon a time, monsters evaded the sky, a brave god stood against them with his last power. He got defeated and fell...");
+        setSpeechBubbleText("Demons evaded the heaven, a brave god stood against them with his last power. He got defeated and fell...");
         showSpeechBubble(true);
         showPlayGround(false);
         showEnemies(false);
