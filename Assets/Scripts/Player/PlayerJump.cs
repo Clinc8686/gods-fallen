@@ -16,9 +16,13 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private AudioSource jumpSource;
     [SerializeField] private AudioSource bottomSource;
 
+    private ParticleSystem pSDust;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        pSDust = transform.GetChild(2).GetChild(0).GetComponent<ParticleSystem>();
+        Debug.Log(pSDust.name + " " + transform.GetChild(1).GetChild(1) );
     }
 
     private void OnJump(InputValue value)
@@ -28,6 +32,7 @@ public class PlayerJump : MonoBehaviour
             //gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up* jumpHigh, ForceMode2D.Impulse);
             rb.velocity = new Vector2(rb.velocity.x, jumpHigh);
             countJump++;
+            pSDust.Play();
             if (!jumpSource.isPlaying)
             {
                 jumpSource.Play();
