@@ -22,10 +22,7 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-       
         
-       
-
         if (HIghscore.EnemyDeath() == true)
         {
             scoreAmount -= 2;
