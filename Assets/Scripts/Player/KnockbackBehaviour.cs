@@ -6,6 +6,7 @@ public class KnockbackBehaviour : MonoBehaviour
 {
     [SerializeField] private float knockbackForce;
     [SerializeField] private float knockbackTime;
+    [SerializeField] private float knockbackHigh;
     private Rigidbody2D rB;
     public void StartKnockback(Collision2D col)
     {
@@ -18,7 +19,7 @@ public class KnockbackBehaviour : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             Vector2 dif = (transform.position - col.transform.position).normalized;
-            Vector2 dir = new Vector2(dif.x, dif.y + 1f);
+            Vector2 dir = new Vector2(dif.x, dif.y+ knockbackHigh);
             rB.AddForce(dir * knockbackForce, ForceMode2D.Impulse);
             StartCoroutine(UnKnockback());
         }
