@@ -22,17 +22,19 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float jumpBuffer = 0.2f;
 
     private ParticleSystem pSDust;
-    private float coyoteTimeCounter;
-    private float jumpBufferCounter;
-    
+    private ParticleSystem pSjumpDust;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        pSDust = transform.GetChild(2).GetChild(0).GetComponent<ParticleSystem>();
+        pSDust = GameObject.Find("movingDust").GetComponent<ParticleSystem>();
+        pSjumpDust = GameObject.Find("jumpDust").GetComponent<ParticleSystem>();
     }
 
     private void OnJump(InputValue value)
     {
+        pSDust.Play();
+        
         if (grounded)
         {
             grounded = false;
@@ -42,7 +44,8 @@ public class PlayerJump : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHigh);
             countJump++;
-            pSDust.Play();
+            pSjumpDust.Play();
+
             if (!jumpSource.isPlaying)
             {
                 jumpSource.Play();
@@ -50,7 +53,7 @@ public class PlayerJump : MonoBehaviour
         }
         else
         {
-            pSDust.Stop();
+            pSjumpDust.Stop();
         }
     }
 
