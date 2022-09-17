@@ -31,7 +31,7 @@ public class Enemy_Life : MonoBehaviour
         {
             col.enabled = false;
         }
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject, 0.5f);
         if (TryGetComponent<Rigidbody2D>(out var exists))
         {
             GetComponent<Enemy_Movement>().enabled = false;
