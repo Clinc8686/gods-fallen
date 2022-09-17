@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 public class Score : MonoBehaviour
 {
-    
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI minusText;
     public float scoreAmount;
@@ -16,8 +15,6 @@ public class Score : MonoBehaviour
     {
         scoreAmount = 0f;
         pointIncrease = 1f;
-   
-         
     }
 
     void Update()
@@ -28,22 +25,28 @@ public class Score : MonoBehaviour
             scoreAmount -= 2;
             minusText.text =  "-2" ;
         }
+        
         scoreText.text = "Time " + (int)scoreAmount;
         scoreAmount += pointIncrease * Time.deltaTime; 
+        
         if(dauer > 0)
         {
             dauer -= Time.deltaTime;
         }
+        
         if(dauer <= 0)
         {
             minusText.text = "";
             dauer = dauerReset;
         }
-
+        
+        SetHighscore();
     }
 
-
-
+    private void SetHighscore()
+    {
+        PlayerPrefs.SetFloat("Highscore", scoreAmount);
+    }
 
 
 }
