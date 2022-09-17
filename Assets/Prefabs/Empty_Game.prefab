@@ -412,8 +412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Once upon a time, monsters evaded the sky, a brave god stood against them
-    with his last power. He got defeated and fell...
+  m_text: "Hier k\xF6nnte immer noch Ihre Werbung stehen!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -440,7 +439,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.75
+  m_fontSize: 37.3
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -891,6 +890,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playGround: {fileID: 557124863485398532}
   bottomCollider: {fileID: 6769693984068462784}
+  backgroundLayer:
+    serializedVersion: 2
+    m_Bits: 1048576
   playerFigur: {fileID: 6102921749090511601}
   sky: {fileID: 5101688637585020856}
   speechBubble: {fileID: 8401767755462119410}
@@ -1263,7 +1265,8 @@ PrefabInstance:
       propertyPath: invincibleTime
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4540904415407852433, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7864c5d2df5d44f42b079169548701aa, type: 3}
 --- !u!1 &6102921749090511601 stripped
 GameObject:

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playGround;
     [SerializeField] private GameObject bottomCollider;
     private bool _playGroundEnabled;
+    public LayerMask backgroundLayer;
 
     [SerializeField] private GameObject playerFigur;
     [SerializeField] private GameObject sky;
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         spawnPlayerOnTop();
-        //setSpeechBubbleText("Es war ein mal vor langer, langer Zeit... blablabla");
+        setSpeechBubbleText("Once upon a time, monsters evaded the sky, a brave god stood against them with his last power. He got defeated and fell...");
         showSpeechBubble(true);
         showPlayGround(false);
         showEnemies(false);
@@ -45,6 +46,19 @@ public class GameManager : MonoBehaviour
             showEnemies(true);
             isBeginning = false;
             showThoughtsBubble(true);
+        }
+
+        if (!IsOnBackground())
+        {
+            setSpeechBubbleText("Go back to the playground!");
+            showSpeechBubble(true);
+        }
+        else
+        {
+            if (!isBeginning)
+            {
+                showSpeechBubble(false);
+            }
         }
     }
 
@@ -110,6 +124,18 @@ public class GameManager : MonoBehaviour
         float distance = 2.0f;
     
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null) {
+            return true;
+        }
+        return false;
+    }
+    
+    bool IsOnBackground() {
+        Vector2 position = playerFigur.transform.position;
+        Vector3 direction = Vector3.back;
+        float distance = 2.0f;
+    
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, backgroundLayer);
         if (hit.collider != null) {
             return true;
         }
