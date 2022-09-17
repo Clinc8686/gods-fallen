@@ -23,7 +23,7 @@ public class Score : MonoBehaviour
         if (HIghscore.EnemyDeath() == true)
         {
             scoreAmount -= 2;
-            minusText.text =  "-2" ;
+            minusText.text =  "HIT -2" ;
         }
         
         scoreText.text = "Time " + (int)scoreAmount;
