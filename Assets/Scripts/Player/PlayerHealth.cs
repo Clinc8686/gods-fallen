@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void takePlayerLife(Collision2D col)
     {
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy" || col.collider.tag == "Enemy")
         {
             transform.GetComponent<KnockbackBehaviour>().StartKnockback(col);
 
