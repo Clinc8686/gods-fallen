@@ -80,12 +80,15 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
-        if (col.gameObject.tag == "Health" && health < 3)
+        if (col.gameObject.tag == "Health")
         {
-            heartAnimator = hearts[health].GetComponent<Animator>();
-            heartAnimator.SetTrigger("Back");
-            health++;
-            pSHealing.Play();
+            if (health < 3)
+            {
+                heartAnimator = hearts[health].GetComponent<Animator>();
+                heartAnimator.SetTrigger("Back");
+                health++;
+                pSHealing.Play();
+            }
             Destroy(col.gameObject);
         }
     }
