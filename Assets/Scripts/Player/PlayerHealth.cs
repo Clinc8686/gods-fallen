@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject healthbar;
     [SerializeField] private Sprite emptyHeart;
     [SerializeField] private Animator heartAnimator;
+
+    [SerializeField] private float knockbackForce;
+    [SerializeField] private float knockbackTime;
     private float invinc;
     private GameObject[] hearts;
     private ParticleSystem pSBleeding;
@@ -56,19 +60,23 @@ public class PlayerHealth : MonoBehaviour
 
     private void takePlayerLife(Collision2D col)
     {
-        if (col.gameObject.tag == "Enemy" && (invinc <= 0))
+        if (col.gameObject.tag == "Enemy")
         {
-            health--;
-            invinc = invincibleTime;
-            heartAnimator = hearts[health].GetComponent<Animator>();
-            heartAnimator.SetTrigger("Flatter");
-            hearts[health].GetComponent<Image>().sprite = emptyHeart;
+            Knockback(col);
 
-            pSBleeding.Play();
-
-            if (health <= 0)
+            if (invinc <= 0)
             {
-                SceneManager.LoadScene(3);
+                health--;
+                invinc = invincibleTime;
+                heartAnimator = hearts[health].GetComponent<Animator>();
+                heartAnimator.SetTrigger("Flatter");
+                hearts[health].GetComponent<Image>().sprite = emptyHeart;
+
+                pSBleeding.Play();
+                if (health <= 0)
+                {
+                    SceneManager.LoadScene(3);
+                }
             }
         }
     }
@@ -77,5 +85,23 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(6); 
+    }
+
+    private void Knockback(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Vector2 dif = (transform.position - col.transform.position).normalized;
+            Vector2 dir = new Vector2(dif.x, dif.y + 1f);
+            transform.GetComponent<Rigidbody2D>().AddForce(dir * knockbackForce, ForceMode2D.Impulse);
+            StartCoroutine(UnKnockback());
+        }
+    }
+
+    private IEnumerator UnKnockback()
+    {
+        yield return new WaitForSeconds(knockbackTime);
+        transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        
     }
 }
