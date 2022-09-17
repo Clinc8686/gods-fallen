@@ -51,8 +51,9 @@ public class BulletColor : MonoBehaviour
 
         } else if (playerHeight > PlayerAnimations.emptinessDepth && playerHeight < PlayerAnimations.emptinessHeight)
         {
-            leere.SetActive(true);
             setfalse();
+            leere.SetActive(true);
+           
             GetComponent<SpriteRenderer>().sprite = emptiness;
             
         }
