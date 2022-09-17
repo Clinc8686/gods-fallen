@@ -9,6 +9,7 @@ TagManager:
   - Background
   - Bottom
   - Trap
+  - Health
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float invincibleTime = 1f;
     [SerializeField] private GameObject healthbar;
     [SerializeField] private Sprite emptyHeart;
+    [SerializeField] private Sprite fullHeart;
     [SerializeField] private Animator heartAnimator;
     
     private float invinc;
@@ -30,7 +31,6 @@ public class PlayerHealth : MonoBehaviour
         }
 
         pSBleeding = transform.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
-        Debug.Log(pSBleeding + " " + transform.GetChild(0).GetChild(0));
     }
 
     private void Update()
@@ -49,15 +49,16 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        takePlayerLife(col);
+        changePlayerLife(col);
     }
     private void OnCollisionStay2D(Collision2D col)
     {
-        takePlayerLife(col);
+        changePlayerLife(col);
     }
 
-    private void takePlayerLife(Collision2D col)
+    private void changePlayerLife(Collision2D col)
     {
+        
         if (col.gameObject.tag == "Enemy" || col.collider.tag == "Enemy")
         {
             transform.GetComponent<KnockbackBehaviour>().StartKnockback(col);
@@ -68,7 +69,6 @@ public class PlayerHealth : MonoBehaviour
                 invinc = invincibleTime;
                 heartAnimator = hearts[health].GetComponent<Animator>();
                 heartAnimator.SetTrigger("Flatter");
-                hearts[health].GetComponent<Image>().sprite = emptyHeart;
 
                 pSBleeding.Play();
                 if (health <= 0)
@@ -77,11 +77,20 @@ public class PlayerHealth : MonoBehaviour
                 }
             }
         }
+
+        if (col.gameObject.tag == "Health" && health < 3)
+        {
+            heartAnimator = hearts[health].GetComponent<Animator>();
+            heartAnimator.SetTrigger("Back");
+            health++;
+            Destroy(col.gameObject);
+        }
     }
-    
+
     IEnumerator LoadWinScene()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(6); 
     }
+
 }
