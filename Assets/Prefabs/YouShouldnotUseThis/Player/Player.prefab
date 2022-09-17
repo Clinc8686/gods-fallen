@@ -5491,6 +5491,7 @@ GameObject:
   - component: {fileID: 1805372217586199140}
   - component: {fileID: 4325973160980924468}
   - component: {fileID: 8510912724312757290}
+  - component: {fileID: 1689018880075749609}
   - component: {fileID: 8210405440820419717}
   - component: {fileID: 6124242144782334603}
   - component: {fileID: 6004936568609428696}
@@ -5683,6 +5684,20 @@ MonoBehaviour:
   maxShootTime: 1
   weaponAnimator: {fileID: 0}
   shootSource: {fileID: 5419353221224660067}
+--- !u!114 &1689018880075749609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689725653696329556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e447bf846e220941a2478cc09213752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 1
+  knockbackTime: 0.3
 --- !u!114 &8210405440820419717
 MonoBehaviour:
   m_ObjectHideFlags: 0

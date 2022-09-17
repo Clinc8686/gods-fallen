@@ -14,9 +14,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject healthbar;
     [SerializeField] private Sprite emptyHeart;
     [SerializeField] private Animator heartAnimator;
-
-    [SerializeField] private float knockbackForce;
-    [SerializeField] private float knockbackTime;
+    
     private float invinc;
     private GameObject[] hearts;
     private ParticleSystem pSBleeding;
@@ -62,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            Knockback(col);
+            transform.GetComponent<KnockbackBehaviour>().StartKnockback(col);
 
             if (invinc <= 0)
             {
@@ -85,23 +83,5 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(6); 
-    }
-
-    private void Knockback(Collision2D col)
-    {
-        if (col.gameObject.tag == "Enemy")
-        {
-            Vector2 dif = (transform.position - col.transform.position).normalized;
-            Vector2 dir = new Vector2(dif.x, dif.y + 1f);
-            transform.GetComponent<Rigidbody2D>().AddForce(dir * knockbackForce, ForceMode2D.Impulse);
-            StartCoroutine(UnKnockback());
-        }
-    }
-
-    private IEnumerator UnKnockback()
-    {
-        yield return new WaitForSeconds(knockbackTime);
-        transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        
     }
 }
