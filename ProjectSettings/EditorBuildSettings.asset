@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_Scenes/Winner.unity
     guid: 07840a7880a970743bbb98f602473f84
+  - enabled: 1
+    path: Assets/Scenes/Menu_Scenes/EndBossScene.unity
+    guid: 1ec4bed57193ec9499a308df126f7544
   m_configObjects: {}
