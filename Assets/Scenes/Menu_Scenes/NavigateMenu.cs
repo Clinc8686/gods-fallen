@@ -14,7 +14,7 @@ public class NavigateMenu : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+            SceneManager.LoadScene(scene);
         }
     }
 }
