@@ -13,7 +13,6 @@ public class GetPauseScene : MonoBehaviour
 
     private void OnPause(InputValue val)
     {
-        Debug.Log("Pause " + isPaused);
         if (isPaused)
         {
             isPaused = false;
