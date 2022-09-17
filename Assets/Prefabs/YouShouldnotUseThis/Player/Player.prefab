@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3051031340346093554}
   - component: {fileID: 8449843690440029799}
   - component: {fileID: 2990636965614603396}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: LifeBackAnimation
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -977,7 +977,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 20
+        scalar: 40
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -4839,7 +4839,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5270,7 +5270,7 @@ GameObject:
   - component: {fileID: 4009364812714941141}
   - component: {fileID: 7603898961276404256}
   - component: {fileID: 8711478728833944516}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: BloodSimulation
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -10098,7 +10098,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -10139,7 +10139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692034454063162593}
   - component: {fileID: 8548255885933768271}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10201,7 +10201,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ed1d4a34ef4574a44b6063eb35a27c92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10222,7 +10222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4709267862187306221}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HisBlood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10257,7 +10257,7 @@ GameObject:
   - component: {fileID: 8428014527217732106}
   - component: {fileID: 1645574577310919045}
   - component: {fileID: 4317261002056767887}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10323,7 +10323,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7e915a77f59149544a6a3fd5d58a79c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10438,7 +10438,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ef7776eb427ef1649b03241fbcd91d6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20645,7 +20645,7 @@ GameObject:
   - component: {fileID: 1733651003883665672}
   - component: {fileID: 6453520084632011734}
   - component: {fileID: 4785718684786429173}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: Leere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20660,7 +20660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4679354417561131020}
   m_LocalRotation: {x: 0.00000004368314, y: -0.000000001571216, z: -0, w: 1}
-  m_LocalPosition: {x: 0.067, y: 0.068, z: -0}
+  m_LocalPosition: {x: 0.067, y: 0.08, z: -0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20750,7 +20750,7 @@ GameObject:
   - component: {fileID: 8833175882502765729}
   - component: {fileID: 1534399242436092828}
   - component: {fileID: 7656025331140241771}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: Hell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20812,7 +20812,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 35187b492af0c1b4982f6d49efe5d0c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20887,7 +20887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768287077052726217}
   - component: {fileID: 1943168006046156236}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20949,7 +20949,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5614762520627874abc8e945618f237c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

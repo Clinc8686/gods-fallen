@@ -9,6 +9,7 @@ public class HIghscore : MonoBehaviour
     private void OnDestroy()
     {
         //EnemyDeath();
+        Debug.Log("DES");
         isDeath = true;
     }
 
