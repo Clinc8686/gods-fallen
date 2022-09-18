@@ -17,18 +17,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject sky;
     [SerializeField] private GameObject speechBubble;
     [SerializeField] private GameObject thoughtBubble;
+    [SerializeField] private TextMeshProUGUI highscore;
     public LayerMask groundLayer;
     private GameObject[] enemies;
     public static bool isBeginning = true;
 
     //Finish
-    public void CompleteLevel()
+    /*public void CompleteLevel()
     {
         SceneManager.LoadScene(6);
-    }
+    }*/
     
     void Start()
     {
+        highscore.text = "Time 0";
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         spawnPlayerOnTop();
         setSpeechBubbleText("Demons evaded the heaven, a brave god stood against them with his last power. He got defeated and fell...");

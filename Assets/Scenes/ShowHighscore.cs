@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class ShowHighscore : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI score;
     void Start()
     {
-        int amount = (int) PlayerPrefs.GetFloat("Highscore", 0);
-        transform.GetComponent<TextMeshProUGUI>().text = amount + " Sekunden";
+        if (PlayerPrefs.HasKey("Highscore"))
+        {
+            float time = PlayerPrefs.GetFloat("Highscore");
+            score.SetText(time + " seconds");
+        }
     }
 }

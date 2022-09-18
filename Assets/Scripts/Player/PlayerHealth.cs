@@ -98,5 +98,5 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(6); 
     }
-
+    
 }
