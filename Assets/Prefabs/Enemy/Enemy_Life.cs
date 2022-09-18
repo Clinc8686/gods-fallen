@@ -10,10 +10,6 @@ public class Enemy_Life : MonoBehaviour
 {
     [SerializeField] private float life = 2;
     [SerializeField] private Animator anim;
-    
-
-
-
 
     public void takeLife(float dmg)
     {
