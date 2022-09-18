@@ -40,15 +40,6 @@ public class PlayerHealth : MonoBehaviour
         invinc -= Time.deltaTime;
     }
 
-    private void FixedUpdate()
-    {
-        if (transform.position.y > 265)
-        {
-            //Player Wins
-            StartCoroutine(LoadWinScene());
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D col)
     {
         changePlayerLife(col);
@@ -87,16 +78,10 @@ public class PlayerHealth : MonoBehaviour
                 heartAnimator = hearts[health].GetComponent<Animator>();
                 heartAnimator.SetTrigger("Back");
                 health++;
-                pSHealing.Play();
             }
+            pSHealing.Play();
             Destroy(col.gameObject);
         }
     }
 
-    IEnumerator LoadWinScene()
-    {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(6); 
-    }
-    
 }

@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     //Finish
     /*public void CompleteLevel()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(7);
     }*/
     
     void Start()
