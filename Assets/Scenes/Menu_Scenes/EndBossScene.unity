@@ -3284,7 +3284,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1151887748}
   - component: {fileID: 1151887747}
-  - component: {fileID: 1151887746}
   - component: {fileID: 1151887745}
   - component: {fileID: 1151887749}
   - component: {fileID: 1151887750}
@@ -3308,19 +3307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endboss: {fileID: 748967601}
---- !u!114 &1151887746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151887744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e048dc0e33c383d4ab27ee8416203e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 51404164}
 --- !u!114 &1151887747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26346,7 +26332,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7297034741423982510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 18190b34ac4555f499e0391279aed81a, type: 2}
   m_CullingMode: 0
