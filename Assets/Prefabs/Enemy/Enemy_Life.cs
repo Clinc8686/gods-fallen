@@ -23,6 +23,7 @@ public class Enemy_Life : MonoBehaviour
     private void die()
     {
         anim.SetTrigger("death");
+     
         foreach(Collider2D col in GetComponents<Collider2D>())
         {
             col.enabled = false;
